@@ -280,13 +280,16 @@ const Index = () => {
                 <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
                   <span className="text-5xl">📊</span>
                 </div>
-                <h3 className="text-2xl font-bold text-primary mb-4">Survey Form Coming Soon</h3>
+                <h3 className="text-2xl font-bold text-primary mb-4">Take the Survey</h3>
                 <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
                   Your anonymous survey response will inform policy, advocacy, and clinical research. 
                   Taking just 3 minutes of your time can create lasting impact for our community.
                 </p>
-                <Button variant="outline" disabled>
-                  Survey Link Coming Soon
+                <Button variant="outline" asChild>
+                  <a href="https://forms.gle/zX2uHieyn1aw9xm39" target="_blank" rel="noopener noreferrer">
+                    Take the Survey
+                    <ExternalLink className="ml-2" size={18} />
+                  </a>
                 </Button>
               </CardContent>
             </Card>
@@ -309,9 +312,12 @@ const Index = () => {
             <Button 
               size="lg" 
               className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-6"
-              disabled
+              asChild
             >
-              Volunteer Information Coming Soon
+              <a href="https://forms.gle/M9Rjbdaq4CydJ7dq8" target="_blank" rel="noopener noreferrer">
+                Apply to Volunteer
+                <ExternalLink className="ml-2" size={20} />
+              </a>
             </Button>
           </div>
         </div>
