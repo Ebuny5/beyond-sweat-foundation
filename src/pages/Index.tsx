@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Menu, X, ExternalLink, Download, MessageCircle, Play } from "lucide-react";
+import { Menu, X, ExternalLink, Download, MessageCircle, Play, Mail, Phone } from "lucide-react";
 import { useState } from "react";
+import founderImage from "@/assets/founder.jpg";
+import campaignBanner from "@/assets/campaign-banner.jpg";
+import teamImage from "@/assets/team.png";
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -23,11 +26,12 @@ const Index = () => {
             {/* Desktop Menu */}
             <ul className="hidden md:flex items-center gap-6 text-white">
               <li><a href="#home" className="hover:text-accent transition-colors">Home</a></li>
-              <li><a href="#about" className="hover:text-accent transition-colors">About</a></li>
+              <li><a href="#founder" className="hover:text-accent transition-colors">Founder</a></li>
+              <li><a href="#story" className="hover:text-accent transition-colors">My Story</a></li>
+              <li><a href="#campaign" className="hover:text-accent transition-colors">Campaign</a></li>
               <li><a href="#sweatsmart" className="hover:text-accent transition-colors">SweatSmart</a></li>
               <li><a href="#community" className="hover:text-accent transition-colors">Community</a></li>
-              <li><a href="#spotlight" className="hover:text-accent transition-colors">Spotlight</a></li>
-              <li><a href="#volunteer" className="hover:text-accent transition-colors">Volunteer</a></li>
+              <li><a href="#testimonials" className="hover:text-accent transition-colors">Testimonials</a></li>
               <li><a href="#contact" className="bg-primary hover:bg-primary-light px-4 py-2 rounded transition-colors">Contact</a></li>
             </ul>
 
@@ -44,11 +48,12 @@ const Index = () => {
           {mobileMenuOpen && (
             <ul className="md:hidden mt-4 space-y-3 pb-4 text-white">
               <li><a href="#home" className="block hover:text-accent transition-colors">Home</a></li>
-              <li><a href="#about" className="block hover:text-accent transition-colors">About</a></li>
+              <li><a href="#founder" className="block hover:text-accent transition-colors">Founder</a></li>
+              <li><a href="#story" className="block hover:text-accent transition-colors">My Story</a></li>
+              <li><a href="#campaign" className="block hover:text-accent transition-colors">Campaign</a></li>
               <li><a href="#sweatsmart" className="block hover:text-accent transition-colors">SweatSmart</a></li>
               <li><a href="#community" className="block hover:text-accent transition-colors">Community</a></li>
-              <li><a href="#spotlight" className="block hover:text-accent transition-colors">Spotlight</a></li>
-              <li><a href="#volunteer" className="block hover:text-accent transition-colors">Volunteer</a></li>
+              <li><a href="#testimonials" className="block hover:text-accent transition-colors">Testimonials</a></li>
               <li><a href="#contact" className="block hover:text-accent transition-colors">Contact</a></li>
             </ul>
           )}
@@ -101,18 +106,53 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Founder Section */}
+      <section id="founder" className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Meet the Founder</h2>
+              <p className="text-xl text-muted-foreground">Turning personal struggle into collective empowerment</p>
+            </div>
+            <Card className="overflow-hidden hover:shadow-2xl transition-shadow">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="relative min-h-[400px]">
+                  <img 
+                    src={founderImage} 
+                    alt="Founder of Beyond Sweat Foundation" 
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+                <CardContent className="p-8 md:p-12 flex flex-col justify-center bg-gradient-to-br from-primary/5 to-accent/5">
+                  <h3 className="text-2xl font-bold text-primary mb-4">Our Story Begins Here</h3>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    Living with hyperhidrosis in Nigeria's rising temperatures, I experienced firsthand the 
+                    isolation, stigma, and lack of support that many face daily.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Beyond Sweat Foundation was born from this lived experience—a commitment to ensure no one 
+                    faces this journey alone. We're building the community and resources I wish existed, 
+                    combining climate awareness, health advocacy, and systemic change.
+                  </p>
+                </CardContent>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Watch My Story Section */}
-      <section className="py-20 bg-muted">
+      <section id="story" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <Card className="overflow-hidden hover:shadow-2xl transition-shadow">
+            <Card className="overflow-hidden hover:shadow-2xl transition-shadow border-2 border-primary/20">
               <div className="grid md:grid-cols-2 gap-0">
                 <div className="bg-primary/10 flex items-center justify-center p-8 min-h-[300px]">
                   <div className="text-center">
-                    <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
+                    <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary/30 transition-colors">
                       <Play size={48} className="text-primary" />
                     </div>
-                    <p className="text-muted-foreground">[Your Story Video Placeholder]</p>
+                    <p className="text-muted-foreground font-medium">Click to watch on YouTube</p>
                   </div>
                 </div>
                 <CardContent className="p-8 flex flex-col justify-center">
@@ -121,9 +161,11 @@ const Index = () => {
                     Hear about my journey living with hyperhidrosis and why I founded Beyond Sweat Foundation 
                     to create the support system I wish existed.
                   </p>
-                  <Button className="w-full sm:w-auto" variant="outline" disabled>
-                    <Play className="mr-2" size={18} />
-                    Coming Soon - YouTube Video
+                  <Button className="w-full sm:w-auto bg-primary hover:bg-primary-dark" asChild>
+                    <a href="https://youtu.be/CVOXL4lWMBo" target="_blank" rel="noopener noreferrer">
+                      <Play className="mr-2" size={18} />
+                      Watch on YouTube
+                    </a>
                   </Button>
                 </CardContent>
               </div>
@@ -132,27 +174,74 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Campaign Section */}
+      <section id="campaign" className="py-20 bg-primary text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">They Were Writing: I Was Drowning</h2>
+              <p className="text-xl opacity-90 max-w-3xl mx-auto">
+                Our campaign to raise awareness about the hidden struggles of hyperhidrosis in schools and workplaces
+              </p>
+            </div>
+            <Card className="overflow-hidden hover:shadow-2xl transition-shadow">
+              <div className="relative">
+                <img 
+                  src={campaignBanner} 
+                  alt="They Were Writing: I Was Drowning Campaign" 
+                  className="w-full h-auto"
+                />
+              </div>
+              <CardContent className="p-8 md:p-12 bg-gradient-to-br from-primary/10 to-accent/10">
+                <h3 className="text-2xl font-bold text-primary mb-4">Join the Movement</h3>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  While others were writing in class, I was drowning in sweat. This campaign shares the 
+                  real stories of hyperhidrosis sufferers and advocates for understanding, accommodation, 
+                  and systemic change in our schools, workplaces, and communities.
+                </p>
+                <Button 
+                  size="lg" 
+                  className="bg-primary hover:bg-primary-dark text-white"
+                  asChild
+                >
+                  <a href="https://c.org/cM7H8Z96Dr" target="_blank" rel="noopener noreferrer">
+                    Support the Campaign
+                    <ExternalLink className="ml-2" size={20} />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
-      <section id="about" className="py-20 bg-primary text-white">
+      <section id="about" className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Climate-Health-Justice</h2>
-            <p className="text-xl opacity-90 max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Climate-Health-Justice</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Addressing hyperhidrosis in the context of rising temperatures and health inequity
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 min-h-[400px] flex items-center justify-center">
-              <p className="text-center text-lg">[Climate/Community Image Placeholder]</p>
+            <div className="relative rounded-2xl overflow-hidden min-h-[400px] shadow-xl">
+              <img 
+                src={teamImage} 
+                alt="Beyond Sweat Foundation Team - Teaching about Hyperhidrosis" 
+                className="absolute inset-0 w-full h-full object-cover"
+              />
             </div>
             
             <div>
-              <h3 className="text-3xl font-bold mb-4">Our Mission</h3>
-              <p className="text-lg leading-relaxed opacity-90">
+              <h3 className="text-3xl font-bold text-primary mb-6">Our Mission</h3>
+              <p className="text-lg leading-relaxed text-muted-foreground mb-4">
                 Beyond Sweat Foundation combines lived experience, community education, and climate-aware 
-                innovation to support people with hyperhidrosis across Nigeria and West Africa. Rising 
-                temperatures intensify symptoms, yet the condition remains under-diagnosed and dismissed. 
+                innovation to support people with hyperhidrosis across Nigeria and West Africa.
+              </p>
+              <p className="text-lg leading-relaxed text-muted-foreground">
+                Rising temperatures intensify symptoms, yet the condition remains under-diagnosed and dismissed. 
                 We're building a movement that connects climate adaptation, health equity, and systemic change.
               </p>
             </div>
@@ -264,6 +353,41 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-20 bg-primary text-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Community Voices</h2>
+            <p className="text-xl opacity-90 max-w-2xl mx-auto">
+              Real stories from our community members
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:shadow-2xl transition-shadow">
+              <CardContent className="p-8 md:p-12">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                    <span className="text-3xl">👤</span>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-2">Bernard Adewumi</h3>
+                    <p className="opacity-80">Community Member</p>
+                  </div>
+                </div>
+                <p className="text-lg leading-relaxed opacity-90 italic">
+                  "Finding Beyond Sweat Foundation has been life-changing. For years, I struggled with 
+                  hyperhidrosis in silence, thinking I was alone. This community showed me I'm not alone, 
+                  and the resources provided through SweatSmart have helped me manage my condition better 
+                  than I ever thought possible. Thank you for creating this space where we can share our 
+                  experiences and support each other."
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Spotlight Nigeria Section */}
       <section id="spotlight" className="py-20 bg-background">
         <div className="container mx-auto px-4">
@@ -334,12 +458,61 @@ const Index = () => {
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <Card className="border-2 border-dashed border-primary">
-              <CardContent className="p-12 text-center">
-                <h3 className="text-2xl font-bold text-primary mb-4">Contact Information Coming Soon</h3>
-                <p className="text-muted-foreground mb-6">
-                  We're setting up our contact channels. Check back soon for email, phone, and office details.
-                </p>
+            <Card className="border-2 border-primary hover:shadow-2xl transition-shadow">
+              <CardContent className="p-8 md:p-12">
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <Mail className="text-primary" size={24} />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-primary mb-2">Email Us</h3>
+                        <a 
+                          href="mailto:info@beyondsweat.life" 
+                          className="text-muted-foreground hover:text-primary transition-colors"
+                        >
+                          info@beyondsweat.life
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <Phone className="text-primary" size={24} />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-primary mb-2">Call Us</h3>
+                        <a 
+                          href="tel:+2348112289385" 
+                          className="text-muted-foreground hover:text-primary transition-colors"
+                        >
+                          +234 811 228 9385
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex flex-col justify-center">
+                    <h3 className="text-2xl font-bold text-primary mb-4">Ready to Connect?</h3>
+                    <p className="text-muted-foreground mb-6">
+                      Whether you're seeking support, want to volunteer, or are interested in partnering 
+                      with us, we're here to help. Reach out today and join our mission.
+                    </p>
+                    <div className="flex gap-4">
+                      <Button variant="outline" asChild>
+                        <a href="mailto:info@beyondsweat.life">
+                          Send Email
+                        </a>
+                      </Button>
+                      <Button className="bg-primary hover:bg-primary-dark" asChild>
+                        <a href="tel:+2348112289385">
+                          Call Now
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -357,7 +530,9 @@ const Index = () => {
             
             <div className="flex flex-wrap gap-6 justify-center">
               <a href="#home" className="opacity-80 hover:opacity-100 transition-opacity">Home</a>
-              <a href="#about" className="opacity-80 hover:opacity-100 transition-opacity">About</a>
+              <a href="#founder" className="opacity-80 hover:opacity-100 transition-opacity">Founder</a>
+              <a href="#story" className="opacity-80 hover:opacity-100 transition-opacity">My Story</a>
+              <a href="#campaign" className="opacity-80 hover:opacity-100 transition-opacity">Campaign</a>
               <a href="#sweatsmart" className="opacity-80 hover:opacity-100 transition-opacity">SweatSmart</a>
               <a href="#community" className="opacity-80 hover:opacity-100 transition-opacity">Community</a>
               <a href="#contact" className="opacity-80 hover:opacity-100 transition-opacity">Contact</a>
