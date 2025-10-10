@@ -3,8 +3,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Menu, X, ExternalLink, Download, MessageCircle, Play, Mail, Phone } from "lucide-react";
 import { useState } from "react";
 import founderImage from "@/assets/founder.jpg";
-import campaignBanner from "@/assets/campaign-banner.jpg";
-import teamImage from "@/assets/team.png";
+import storyImage from "@/assets/campaign-banner.jpg";
+import campaignImage from "@/assets/team.png";
+import heroBg from "@/assets/hero-bg.png";
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -65,7 +66,10 @@ const Index = () => {
         id="home" 
         className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
         style={{
-          background: 'linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 100%)'
+          backgroundImage: `linear-gradient(rgba(91, 33, 182, 0.8), rgba(126, 34, 206, 0.7)), url(${heroBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
         }}
       >
         <div className="absolute inset-0 opacity-10">
@@ -147,13 +151,12 @@ const Index = () => {
           <div className="max-w-4xl mx-auto">
             <Card className="overflow-hidden hover:shadow-2xl transition-shadow border-2 border-primary/20">
               <div className="grid md:grid-cols-2 gap-0">
-                <div className="bg-primary/10 flex items-center justify-center p-8 min-h-[300px]">
-                  <div className="text-center">
-                    <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary/30 transition-colors">
-                      <Play size={48} className="text-primary" />
-                    </div>
-                    <p className="text-muted-foreground font-medium">Click to watch on YouTube</p>
-                  </div>
+                <div className="relative min-h-[300px]">
+                  <img 
+                    src={storyImage} 
+                    alt="They Were Sweating, I Was Drowning" 
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
                 </div>
                 <CardContent className="p-8 flex flex-col justify-center">
                   <h2 className="text-3xl font-bold text-primary mb-4">Watch My Story</h2>
@@ -187,7 +190,7 @@ const Index = () => {
             <Card className="overflow-hidden hover:shadow-2xl transition-shadow">
               <div className="relative">
                 <img 
-                  src={campaignBanner} 
+                  src={campaignImage} 
                   alt="They Were Writing: I Was Drowning Campaign" 
                   className="w-full h-auto"
                 />
@@ -227,11 +230,7 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="relative rounded-2xl overflow-hidden min-h-[400px] shadow-xl">
-              <img 
-                src={teamImage} 
-                alt="Beyond Sweat Foundation Team - Teaching about Hyperhidrosis" 
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20"></div>
             </div>
             
             <div>
