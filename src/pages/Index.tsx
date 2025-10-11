@@ -1,11 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Menu, X, ExternalLink, Download, MessageCircle, Play, Mail, Phone } from "lucide-react";
+import { Menu, X, ExternalLink, Download, MessageCircle, Play, Mail, Phone, Instagram, Facebook, Twitter } from "lucide-react";
 import { useState } from "react";
 import founderImage from "@/assets/founder.jpg";
 import storyImage from "@/assets/campaign-banner.jpg";
 import campaignImage from "@/assets/team.png";
-import heroBg from "@/assets/hero-bg.png";
+import heroBg from "@/assets/hero-bg.jpg";
+import spotlightImage from "@/assets/spotlight-nigeria.jpg";
+import schoolAwarenessImage from "@/assets/school-awareness.jpg";
+import researchPolicyImage from "@/assets/research-policy.jpg";
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -27,12 +30,13 @@ const Index = () => {
             {/* Desktop Menu */}
             <ul className="hidden md:flex items-center gap-6 text-white">
               <li><a href="#home" className="hover:text-accent transition-colors">Home</a></li>
-              <li><a href="#founder" className="hover:text-accent transition-colors">Founder</a></li>
-              <li><a href="#story" className="hover:text-accent transition-colors">My Story</a></li>
-              <li><a href="#campaign" className="hover:text-accent transition-colors">Campaign</a></li>
-              <li><a href="#sweatsmart" className="hover:text-accent transition-colors">SweatSmart</a></li>
-              <li><a href="#community" className="hover:text-accent transition-colors">Community</a></li>
+              <li><a href="#about" className="hover:text-accent transition-colors">About</a></li>
+              <li><a href="#what-we-do" className="hover:text-accent transition-colors">What We Do</a></li>
+              <li><a href="/events" className="hover:text-accent transition-colors">Events</a></li>
+              <li><a href="/blog" className="hover:text-accent transition-colors">Blog</a></li>
+              <li><a href="/news" className="hover:text-accent transition-colors">News</a></li>
               <li><a href="#testimonials" className="hover:text-accent transition-colors">Testimonials</a></li>
+              <li><a href="/faq" className="hover:text-accent transition-colors">FAQs</a></li>
               <li><a href="#contact" className="bg-primary hover:bg-primary-light px-4 py-2 rounded transition-colors">Contact</a></li>
             </ul>
 
@@ -48,14 +52,15 @@ const Index = () => {
           {/* Mobile Menu */}
           {mobileMenuOpen && (
             <ul className="md:hidden mt-4 space-y-3 pb-4 text-white">
-              <li><a href="#home" className="block hover:text-accent transition-colors">Home</a></li>
-              <li><a href="#founder" className="block hover:text-accent transition-colors">Founder</a></li>
-              <li><a href="#story" className="block hover:text-accent transition-colors">My Story</a></li>
-              <li><a href="#campaign" className="block hover:text-accent transition-colors">Campaign</a></li>
-              <li><a href="#sweatsmart" className="block hover:text-accent transition-colors">SweatSmart</a></li>
-              <li><a href="#community" className="block hover:text-accent transition-colors">Community</a></li>
-              <li><a href="#testimonials" className="block hover:text-accent transition-colors">Testimonials</a></li>
-              <li><a href="#contact" className="block hover:text-accent transition-colors">Contact</a></li>
+              <li><a href="#home" className="block hover:text-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>Home</a></li>
+              <li><a href="#about" className="block hover:text-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>About</a></li>
+              <li><a href="#what-we-do" className="block hover:text-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>What We Do</a></li>
+              <li><a href="/events" className="block hover:text-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>Events</a></li>
+              <li><a href="/blog" className="block hover:text-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>Blog</a></li>
+              <li><a href="/news" className="block hover:text-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>News</a></li>
+              <li><a href="#testimonials" className="block hover:text-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>Testimonials</a></li>
+              <li><a href="/faq" className="block hover:text-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>FAQs</a></li>
+              <li><a href="#contact" className="block hover:text-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>Contact</a></li>
             </ul>
           )}
         </div>
@@ -123,12 +128,13 @@ const Index = () => {
                 <div className="relative min-h-[400px]">
                   <img 
                     src={founderImage} 
-                    alt="Founder of Beyond Sweat Foundation" 
+                    alt="Gifty Aruwajoye - Founder of Beyond Sweat Foundation" 
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                 </div>
                 <CardContent className="p-8 md:p-12 flex flex-col justify-center bg-gradient-to-br from-primary/5 to-accent/5">
-                  <h3 className="text-2xl font-bold text-primary mb-4">Our Story Begins Here</h3>
+                  <h3 className="text-3xl font-bold text-primary mb-2">Gifty Aruwajoye</h3>
+                  <p className="text-lg text-accent mb-4">Founder & Executive Director</p>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     Living with hyperhidrosis in Nigeria's rising temperatures, I experienced firsthand the 
                     isolation, stigma, and lack of support that many face daily.
@@ -182,25 +188,28 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">They Were Writing: I Was Drowning</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">Teach Hyperhidrosis in Nigerian Medical Schools</h2>
               <p className="text-xl opacity-90 max-w-3xl mx-auto">
-                Our campaign to raise awareness about the hidden struggles of hyperhidrosis in schools and workplaces
+                Improve diagnosis, care and dignity
               </p>
             </div>
             <Card className="overflow-hidden hover:shadow-2xl transition-shadow">
               <div className="relative">
                 <img 
                   src={campaignImage} 
-                  alt="They Were Writing: I Was Drowning Campaign" 
+                  alt="Teach Hyperhidrosis Campaign" 
                   className="w-full h-auto"
                 />
               </div>
               <CardContent className="p-8 md:p-12 bg-gradient-to-br from-primary/10 to-accent/10">
-                <h3 className="text-2xl font-bold text-primary mb-4">Join the Movement</h3>
+                <h3 className="text-2xl font-bold text-primary mb-4">Train Our Doctors: Make Hyperhidrosis Visible</h3>
+                <p className="text-muted-foreground mb-4 leading-relaxed">
+                  Too many people suffer in silence because medical professionals don't recognize hyperhidrosis. 
+                  We're demanding that medical schools include hyperhidrosis in their curriculum.
+                </p>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  While others were writing in class, I was drowning in sweat. This campaign shares the 
-                  real stories of hyperhidrosis sufferers and advocates for understanding, accommodation, 
-                  and systemic change in our schools, workplaces, and communities.
+                  By educating future doctors, we can improve diagnosis, ensure better care, and restore dignity 
+                  to those living with this condition. Join us in making hyperhidrosis visible in Nigerian medical education.
                 </p>
                 <Button 
                   size="lg" 
@@ -222,28 +231,28 @@ const Index = () => {
       <section id="about" className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Climate-Health-Justice</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+              Confronting Hyperhidrosis in a Warming World: Tackling Climate and Health Inequities
+            </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Addressing hyperhidrosis in the context of rising temperatures and health inequity
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            <div className="relative rounded-2xl overflow-hidden min-h-[400px] shadow-xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20"></div>
-            </div>
-            
-            <div>
-              <h3 className="text-3xl font-bold text-primary mb-6">Our Mission</h3>
-              <p className="text-lg leading-relaxed text-muted-foreground mb-4">
-                Beyond Sweat Foundation combines lived experience, community education, and climate-aware 
-                innovation to support people with hyperhidrosis across Nigeria and West Africa.
-              </p>
-              <p className="text-lg leading-relaxed text-muted-foreground">
-                Rising temperatures intensify symptoms, yet the condition remains under-diagnosed and dismissed. 
-                We're building a movement that connects climate adaptation, health equity, and systemic change.
-              </p>
-            </div>
+          <div className="max-w-4xl mx-auto">
+            <Card>
+              <CardContent className="p-8 md:p-12">
+                <h3 className="text-3xl font-bold text-primary mb-6">Our Mission</h3>
+                <p className="text-lg leading-relaxed text-muted-foreground mb-4">
+                  Beyond Sweat Foundation combines lived experience, community education, and climate-aware 
+                  innovation to support people with hyperhidrosis across Nigeria, Africa and the wider global community.
+                </p>
+                <p className="text-lg leading-relaxed text-muted-foreground">
+                  Rising temperatures intensify symptoms, yet the condition remains under-diagnosed and dismissed. 
+                  We're building a movement that connects climate adaptation, health equity, and systemic change.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -306,10 +315,10 @@ const Index = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-primary mb-4">Features</h3>
                 <ul className="text-left text-muted-foreground space-y-2">
-                  <li>✅ Climate alerts</li>
-                  <li>✅ Symptom tracking</li>
-                  <li>✅ Treatment tips</li>
-                  <li>✅ Community support</li>
+                  <li>✅ Daily sweating triggers & patterns</li>
+                  <li>✅ Weather, stress, and food correlations</li>
+                  <li>✅ Symptom severity over time</li>
+                  <li>✅ Progress reports for your doctor</li>
                 </ul>
               </CardContent>
             </Card>
@@ -317,36 +326,108 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Community Section */}
-      <section id="community" className="py-20 bg-muted">
+      {/* What We Do Section */}
+      <section id="what-we-do" className="py-20 bg-muted">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <Card className="overflow-hidden">
-              <div className="grid md:grid-cols-2 gap-0">
-                <div className="bg-accent/10 flex items-center justify-center p-8 min-h-[300px]">
-                  <div className="text-center">
-                    <MessageCircle size={80} className="text-accent mx-auto mb-4" />
-                    <p className="text-muted-foreground font-semibold">Join Our WhatsApp Community</p>
-                  </div>
-                </div>
-                <CardContent className="p-8 flex flex-col justify-center">
-                  <h2 className="text-3xl font-bold text-primary mb-4">Community Support</h2>
-                  <p className="text-muted-foreground mb-6">
-                    Connect with others who understand your journey. Share experiences, coping strategies, 
-                    and victories. Find understanding, acceptance, and practical support from those who truly get it.
-                  </p>
-                  <Button className="w-full sm:w-auto bg-accent hover:bg-accent/90" asChild>
-                    <a 
-                      href="https://chat.whatsapp.com/BKgrDMOttm76Jva6fSZUMi?mode=ac_t" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                    >
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">What We Do</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Building a comprehensive ecosystem of support and advocacy
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* School Awareness Campaign */}
+            <Card className="overflow-hidden hover:shadow-2xl transition-shadow cursor-pointer" onClick={() => window.location.href = '/school-awareness'}>
+              <div className="relative h-48">
+                <img 
+                  src={schoolAwarenessImage} 
+                  alt="School Awareness Campaign" 
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+                <h3 className="absolute bottom-4 left-4 right-4 text-2xl font-bold text-white">
+                  Education & Awareness
+                </h3>
+              </div>
+              <CardContent className="p-6">
+                <p className="text-muted-foreground mb-4">
+                  Climate-aware education programs in schools and communities. We deliver workshops, create resources, 
+                  and break stigma around hyperhidrosis while connecting it to environmental health challenges.
+                </p>
+                <Button variant="outline" className="w-full" asChild>
+                  <a href="/school-awareness">
+                    Learn More
+                    <ExternalLink className="ml-2" size={18} />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Research & Policy */}
+            <Card className="overflow-hidden hover:shadow-2xl transition-shadow cursor-pointer" onClick={() => window.location.href = '/research-policy'}>
+              <div className="relative h-48">
+                <img 
+                  src={researchPolicyImage} 
+                  alt="Research & Policy" 
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+                <h3 className="absolute bottom-4 left-4 right-4 text-2xl font-bold text-white">
+                  Research & Policy
+                </h3>
+              </div>
+              <CardContent className="p-6">
+                <p className="text-muted-foreground mb-4">
+                  We research, advocate, and shape policy for a healthier, climate-resilient future. Combining 
+                  community stories with scientific research to drive national and global recognition.
+                </p>
+                <Button variant="outline" className="w-full" asChild>
+                  <a href="/research-policy">
+                    Learn More
+                    <ExternalLink className="ml-2" size={18} />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Community Support */}
+            <Card className="overflow-hidden hover:shadow-2xl transition-shadow">
+              <div className="relative h-48 bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center">
+                <MessageCircle size={80} className="text-primary" />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-2xl font-bold text-primary mb-4">Community Support</h3>
+                <p className="text-muted-foreground mb-4">
+                  Join our WhatsApp community where people share experiences, coping strategies, and victories. 
+                  Find understanding, acceptance, and practical support from those who truly get it.
+                </p>
+                <div className="space-y-2">
+                  <Button className="w-full bg-accent hover:bg-accent/90" asChild>
+                    <a href="https://chat.whatsapp.com/BKgrDMOttm76Jva6fSZUMi?mode=ac_t" target="_blank" rel="noopener noreferrer">
                       <MessageCircle className="mr-2" size={18} />
-                      Join WhatsApp Group
+                      Join WhatsApp
                     </a>
                   </Button>
-                </CardContent>
-              </div>
+                  <div className="flex gap-2 justify-center pt-2">
+                    <Button variant="outline" size="sm" asChild>
+                      <a href="https://instagram.com/beyondsweatfoundation" target="_blank" rel="noopener noreferrer">
+                        <Instagram size={18} />
+                      </a>
+                    </Button>
+                    <Button variant="outline" size="sm" asChild>
+                      <a href="https://facebook.com/beyondsweatfoundation" target="_blank" rel="noopener noreferrer">
+                        <Facebook size={18} />
+                      </a>
+                    </Button>
+                    <Button variant="outline" size="sm" asChild>
+                      <a href="https://x.com/beyondsweatfoun" target="_blank" rel="noopener noreferrer">
+                        <Twitter size={18} />
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
             </Card>
           </div>
         </div>
@@ -393,25 +474,40 @@ const Index = () => {
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Spotlight Nigeria</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Help us build the first national dataset on hyperhidrosis in Nigeria
+              Building Nigeria's first comprehensive hyperhidrosis dataset
             </p>
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <Card className="border-2 border-dashed border-primary">
-              <CardContent className="p-12 text-center">
-                <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="text-5xl">📊</span>
-                </div>
-                <h3 className="text-2xl font-bold text-primary mb-4">Take the Survey</h3>
-                <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            <Card className="overflow-hidden hover:shadow-2xl transition-shadow border-2 border-primary">
+              <div className="relative h-64">
+                <img 
+                  src={spotlightImage} 
+                  alt="Spotlight Nigeria - Data Collection & Research" 
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent"></div>
+                <h3 className="absolute bottom-4 left-6 right-6 text-3xl font-bold text-white">
+                  Data Collection & Research
+                </h3>
+              </div>
+              <CardContent className="p-8 md:p-12">
+                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                  Building Nigeria's first comprehensive hyperhidrosis dataset through the Spotlight survey 
+                  and SweatSmart app. Evidence drives policy, clinical research, and funding.
+                </p>
+                <p className="text-muted-foreground mb-6">
                   Your anonymous survey response will inform policy, advocacy, and clinical research. 
                   Taking just 3 minutes of your time can create lasting impact for our community.
                 </p>
-                <Button variant="outline" asChild>
+                <Button 
+                  size="lg" 
+                  className="w-full sm:w-auto bg-primary hover:bg-primary-dark" 
+                  asChild
+                >
                   <a href="https://forms.gle/zX2uHieyn1aw9xm39" target="_blank" rel="noopener noreferrer">
                     Take the Survey
-                    <ExternalLink className="ml-2" size={18} />
+                    <ExternalLink className="ml-2" size={20} />
                   </a>
                 </Button>
               </CardContent>
@@ -529,11 +625,13 @@ const Index = () => {
             
             <div className="flex flex-wrap gap-6 justify-center">
               <a href="#home" className="opacity-80 hover:opacity-100 transition-opacity">Home</a>
-              <a href="#founder" className="opacity-80 hover:opacity-100 transition-opacity">Founder</a>
-              <a href="#story" className="opacity-80 hover:opacity-100 transition-opacity">My Story</a>
-              <a href="#campaign" className="opacity-80 hover:opacity-100 transition-opacity">Campaign</a>
-              <a href="#sweatsmart" className="opacity-80 hover:opacity-100 transition-opacity">SweatSmart</a>
-              <a href="#community" className="opacity-80 hover:opacity-100 transition-opacity">Community</a>
+              <a href="#about" className="opacity-80 hover:opacity-100 transition-opacity">About</a>
+              <a href="#what-we-do" className="opacity-80 hover:opacity-100 transition-opacity">What We Do</a>
+              <a href="/events" className="opacity-80 hover:opacity-100 transition-opacity">Events</a>
+              <a href="/blog" className="opacity-80 hover:opacity-100 transition-opacity">Blog</a>
+              <a href="/news" className="opacity-80 hover:opacity-100 transition-opacity">News</a>
+              <a href="#testimonials" className="opacity-80 hover:opacity-100 transition-opacity">Testimonials</a>
+              <a href="/faq" className="opacity-80 hover:opacity-100 transition-opacity">FAQs</a>
               <a href="#contact" className="opacity-80 hover:opacity-100 transition-opacity">Contact</a>
             </div>
           </div>
