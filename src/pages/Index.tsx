@@ -71,7 +71,7 @@ const Index = () => {
         id="home" 
         className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
         style={{
-          backgroundImage: `linear-gradient(rgba(91, 33, 182, 0.8), rgba(126, 34, 206, 0.7)), url(${heroBg})`,
+          backgroundImage: `linear-gradient(rgba(15, 118, 110, 0.48), rgba(0, 0, 0, 0.18)), url(${heroBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed'
@@ -81,36 +81,45 @@ const Index = () => {
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIi8+PC9zdmc+')]"></div>
         </div>
         
-        <div className="container mx-auto px-4 text-center text-white z-10">
-          <div className="inline-block bg-white/20 backdrop-blur-sm px-6 py-2 rounded-full mb-6">
-            🌍 Climate • Health • Justice
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Empowering Lives in a<br />Warming World
+        <div className="container mx-auto px-4 text-white z-10 max-w-5xl">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+            Confronting Hyperhidrosis in a Warming World
           </h1>
           
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-95">
-            Transforming how we address hyperhidrosis through climate-aware solutions, 
-            community advocacy, and systemic change. Join us in the fight for health equity.
+          <p className="text-lg md:text-xl mb-6 opacity-95">
+            Tackling climate-driven health challenges and deepening access to care.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <p className="text-base md:text-lg mb-4 max-w-4xl opacity-92">
+            Beyond Sweat Foundation combines lived experience, education, advocacy, and climate-aware innovation to support people with hyperhidrosis across Nigeria, Africa, and the global community.
+          </p>
+          
+          <p className="text-base md:text-lg mb-8 max-w-4xl opacity-90">
+            Rising temperatures intensify symptoms, yet the condition remains under-diagnosed and dismissed. We build evidence, train communities, and push for clinical recognition so people can access dignified care and climate-resilient solutions.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-3 mb-4">
             <Button 
               size="lg" 
-              className="bg-white text-primary hover:bg-white/90 hover:scale-105 transition-transform text-lg px-8 py-6"
+              className="bg-primary hover:bg-primary-dark text-white font-semibold text-base px-6 py-6"
               asChild
             >
-              <a href="#sweatsmart">Explore SweatSmart</a>
+              <a href="https://forms.gle/spotlightsurvey" target="_blank" rel="noopener noreferrer">
+                Take the Spotlight Survey
+              </a>
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-2 border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-6"
+              className="border-2 border-white/20 bg-white/10 text-white hover:bg-white/20 font-semibold text-base px-6 py-6"
               asChild
             >
-              <a href="#community">Join Community</a>
+              <a href="#volunteer">Volunteer / Join</a>
             </Button>
+          </div>
+          
+          <div className="text-sm opacity-85">
+            Beta: SweatSmart app • Pilot volunteers wanted • Petition to include hyperhidrosis in medical curricula
           </div>
         </div>
       </section>
@@ -227,35 +236,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-              Confronting Hyperhidrosis in a Warming World: Tackling Climate and Health Inequities
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Addressing hyperhidrosis in the context of rising temperatures and health inequity
-            </p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <Card>
-              <CardContent className="p-8 md:p-12">
-                <h3 className="text-3xl font-bold text-primary mb-6">Our Mission</h3>
-                <p className="text-lg leading-relaxed text-muted-foreground mb-4">
-                  Beyond Sweat Foundation combines lived experience, community education, and climate-aware 
-                  innovation to support people with hyperhidrosis across Nigeria, Africa and the wider global community.
-                </p>
-                <p className="text-lg leading-relaxed text-muted-foreground">
-                  Rising temperatures intensify symptoms, yet the condition remains under-diagnosed and dismissed. 
-                  We're building a movement that connects climate adaptation, health equity, and systemic change.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
 
       {/* SweatSmart Section */}
       <section id="sweatsmart" className="py-20 bg-background">
