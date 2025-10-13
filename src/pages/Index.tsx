@@ -142,16 +142,21 @@ const Index = () => {
                   />
                 </div>
                 <CardContent className="p-8 md:p-12 flex flex-col justify-center bg-gradient-to-br from-primary/5 to-accent/5">
-                  <h3 className="text-3xl font-bold text-primary mb-2">Gifty Aruwajoye</h3>
-                  <p className="text-lg text-accent mb-4">Founder & Executive Director</p>
+                  <h3 className="text-3xl font-bold text-primary mb-2">Meet Gifty Aruwajoye</h3>
+                  <p className="text-lg text-accent mb-4">Founder, Beyond Sweat Foundation</p>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
-                    Living with hyperhidrosis in Nigeria's rising temperatures, I experienced firsthand the 
-                    isolation, stigma, and lack of support that many face daily.
+                    Growing up in Africa's hot climate, Gifty experienced firsthand the challenges of living with hyperhidrosis — 
+                    a condition that made even simple tasks feel isolating. Instead of staying silent, she turned her personal 
+                    struggle into purpose.
                   </p>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Beyond Sweat Foundation was born from this lived experience—a commitment to ensure no one 
-                    faces this journey alone. We're building the community and resources I wish existed, 
-                    combining climate awareness, health advocacy, and systemic change.
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    Through Beyond Sweat Foundation, Gifty is transforming awareness and care for hyperhidrosis by combining 
+                    lived experience, community education, and climate-aware health innovation. Her vision is to ensure that 
+                    no one living with excessive sweating feels ashamed, unseen, or unsupported — in Nigeria, across Africa, 
+                    and around the world.
+                  </p>
+                  <p className="text-muted-foreground italic leading-relaxed">
+                    "My journey taught me that visibility is power. When we speak up, we make room for understanding, inclusion, and change."
                   </p>
                 </CardContent>
               </div>
@@ -176,8 +181,8 @@ const Index = () => {
                 <CardContent className="p-8 flex flex-col justify-center">
                   <h2 className="text-3xl font-bold text-primary mb-4">Watch My Story</h2>
                   <p className="text-muted-foreground mb-6">
-                    Hear about my journey living with hyperhidrosis and why I founded Beyond Sweat Foundation 
-                    to create the support system I wish existed.
+                    Discover my journey with hyperhidrosis and how it inspired me to create Beyond Sweat Foundation — 
+                    a support system I once wished existed.
                   </p>
                   <Button className="w-full sm:w-auto bg-primary hover:bg-primary-dark" asChild>
                     <a href="https://youtu.be/CVOXL4lWMBo" target="_blank" rel="noopener noreferrer">
@@ -306,11 +311,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* What We Do Section */}
-      <section id="what-we-do" className="py-20 bg-muted">
+      {/* Research & Policy Section */}
+      <section id="research-policy" className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">What We Do</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Research & Policy</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Building a comprehensive ecosystem of support and advocacy
             </p>
