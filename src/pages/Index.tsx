@@ -287,17 +287,17 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Research & Policy Section */}
-      <section id="research-policy" className="py-20 bg-muted">
+      {/* What We Do Section */}
+      <section id="what-we-do" className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Research & Policy</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">What We Do</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Building a comprehensive ecosystem of support and advocacy
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* School Awareness Campaign */}
             <Card className="overflow-hidden hover:shadow-2xl transition-shadow cursor-pointer" onClick={() => window.location.href = '/school-awareness'}>
               <div className="relative h-48">
@@ -349,45 +349,6 @@ const Index = () => {
                     <ExternalLink className="ml-2" size={18} />
                   </a>
                 </Button>
-              </CardContent>
-            </Card>
-
-            {/* Community Support */}
-            <Card className="overflow-hidden hover:shadow-2xl transition-shadow">
-              <div className="relative h-48 bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center">
-                <MessageCircle size={80} className="text-primary" />
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-2xl font-bold text-primary mb-4">Community Support</h3>
-                <p className="text-muted-foreground mb-4">
-                  Join our WhatsApp community where people share experiences, coping strategies, and victories. 
-                  Find understanding, acceptance, and practical support from those who truly get it.
-                </p>
-                <div className="space-y-2">
-                  <Button className="w-full bg-accent hover:bg-accent/90" asChild>
-                    <a href="https://chat.whatsapp.com/BKgrDMOttm76Jva6fSZUMi?mode=ac_t" target="_blank" rel="noopener noreferrer">
-                      <MessageCircle className="mr-2" size={18} />
-                      Join WhatsApp
-                    </a>
-                  </Button>
-                  <div className="flex gap-2 justify-center pt-2">
-                    <Button variant="outline" size="sm" asChild>
-                      <a href="https://instagram.com/beyondsweatfoundation" target="_blank" rel="noopener noreferrer">
-                        <Instagram size={18} />
-                      </a>
-                    </Button>
-                    <Button variant="outline" size="sm" asChild>
-                      <a href="https://facebook.com/beyondsweatfoundation" target="_blank" rel="noopener noreferrer">
-                        <Facebook size={18} />
-                      </a>
-                    </Button>
-                    <Button variant="outline" size="sm" asChild>
-                      <a href="https://x.com/beyondsweatfoun" target="_blank" rel="noopener noreferrer">
-                        <Twitter size={18} />
-                      </a>
-                    </Button>
-                  </div>
-                </div>
               </CardContent>
             </Card>
           </div>
