@@ -56,9 +56,17 @@ const Events = () => {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* Webinars */}
-            <Card className="hover:shadow-xl transition-shadow">
+            <Card className="hover:shadow-xl transition-shadow overflow-hidden">
+              <div className="relative h-48">
+                <img 
+                  src="/src/assets/webinar.jpg" 
+                  alt="Online Webinars" 
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent"></div>
+              </div>
               <CardContent className="p-8">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 -mt-16 relative z-10 bg-white">
                   <Video className="text-primary" size={32} />
                 </div>
                 <h3 className="text-2xl font-bold text-primary mb-4">Webinars & Virtual Learning Series</h3>
@@ -79,9 +87,17 @@ const Events = () => {
             </Card>
 
             {/* Expert Q&A */}
-            <Card className="hover:shadow-xl transition-shadow">
+            <Card className="hover:shadow-xl transition-shadow overflow-hidden">
+              <div className="relative h-48">
+                <img 
+                  src="/src/assets/qa-session.jpg" 
+                  alt="Expert Q&A Sessions" 
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-accent/90 to-transparent"></div>
+              </div>
               <CardContent className="p-8">
-                <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-6">
+                <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-6 -mt-16 relative z-10 bg-white">
                   <Users className="text-accent" size={32} />
                 </div>
                 <h3 className="text-2xl font-bold text-primary mb-4">Expert Q&A Sessions</h3>
@@ -115,9 +131,17 @@ const Events = () => {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* Workshops */}
-            <Card className="hover:shadow-xl transition-shadow">
+            <Card className="hover:shadow-xl transition-shadow overflow-hidden">
+              <div className="relative h-48">
+                <img 
+                  src="/src/assets/workshop.jpg" 
+                  alt="Awareness Workshops" 
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent"></div>
+              </div>
               <CardContent className="p-8">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 -mt-16 relative z-10 bg-white">
                   <Calendar className="text-primary" size={32} />
                 </div>
                 <h3 className="text-2xl font-bold text-primary mb-4">Hyperhidrosis Awareness Workshops</h3>
@@ -141,9 +165,17 @@ const Events = () => {
             </Card>
 
             {/* Support Groups */}
-            <Card className="hover:shadow-xl transition-shadow">
+            <Card className="hover:shadow-xl transition-shadow overflow-hidden">
+              <div className="relative h-48">
+                <img 
+                  src="/src/assets/support-group.jpg" 
+                  alt="Support Group Meetups" 
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-accent/90 to-transparent"></div>
+              </div>
               <CardContent className="p-8">
-                <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-6">
+                <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-6 -mt-16 relative z-10 bg-white">
                   <MapPin className="text-accent" size={32} />
                 </div>
                 <h3 className="text-2xl font-bold text-primary mb-4">Support Group Meetups</h3>

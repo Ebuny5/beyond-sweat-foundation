@@ -6,12 +6,28 @@ import founderImage from "@/assets/founder.jpg";
 import storyImage from "@/assets/campaign-banner.jpg";
 import campaignImage from "@/assets/team.png";
 import heroBg from "@/assets/hero-bg.jpg";
+import heroBg2 from "@/assets/hero-bg-2.jpg";
 import spotlightImage from "@/assets/spotlight-nigeria.jpg";
 import schoolAwarenessImage from "@/assets/school-awareness.jpg";
 import researchPolicyImage from "@/assets/research-policy.jpg";
+import volunteerImage from "@/assets/volunteer.jpg";
+import workshopImage from "@/assets/workshop.jpg";
+import webinarImage from "@/assets/webinar.jpg";
+import supportGroupImage from "@/assets/support-group.jpg";
+import qaSessionImage from "@/assets/qa-session.jpg";
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [currentHeroImage, setCurrentHeroImage] = useState(0);
+  const heroImages = [heroBg, heroBg2];
+
+  // Hero slideshow
+  useState(() => {
+    const interval = setInterval(() => {
+      setCurrentHeroImage((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  });
 
   return (
     <div className="min-h-screen bg-background">
@@ -71,10 +87,11 @@ const Index = () => {
         id="home" 
         className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
         style={{
-          backgroundImage: `linear-gradient(rgba(15, 118, 110, 0.48), rgba(0, 0, 0, 0.18)), url(${heroBg})`,
+          backgroundImage: `linear-gradient(rgba(15, 118, 110, 0.48), rgba(0, 0, 0, 0.18)), url(${heroImages[currentHeroImage]})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
+          backgroundAttachment: 'fixed',
+          transition: 'background-image 1s ease-in-out'
         }}
       >
         <div className="absolute inset-0 opacity-10">
@@ -120,47 +137,6 @@ const Index = () => {
           
           <div className="text-sm opacity-85">
             Beta: SweatSmart app • Pilot volunteers wanted • Petition to include hyperhidrosis in medical curricula
-          </div>
-        </div>
-      </section>
-
-      {/* Founder Section */}
-      <section id="founder" className="py-20 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Meet the Founder</h2>
-              <p className="text-xl text-muted-foreground">Turning personal struggle into collective empowerment</p>
-            </div>
-            <Card className="overflow-hidden hover:shadow-2xl transition-shadow">
-              <div className="grid md:grid-cols-2 gap-0">
-                <div className="relative min-h-[400px]">
-                  <img 
-                    src={founderImage} 
-                    alt="Gifty Aruwajoye - Founder of Beyond Sweat Foundation" 
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                </div>
-                <CardContent className="p-8 md:p-12 flex flex-col justify-center bg-gradient-to-br from-primary/5 to-accent/5">
-                  <h3 className="text-3xl font-bold text-primary mb-2">Meet Gifty Aruwajoye</h3>
-                  <p className="text-lg text-accent mb-4">Founder, Beyond Sweat Foundation</p>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    Growing up in Africa's hot climate, Gifty experienced firsthand the challenges of living with hyperhidrosis — 
-                    a condition that made even simple tasks feel isolating. Instead of staying silent, she turned her personal 
-                    struggle into purpose.
-                  </p>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    Through Beyond Sweat Foundation, Gifty is transforming awareness and care for hyperhidrosis by combining 
-                    lived experience, community education, and climate-aware health innovation. Her vision is to ensure that 
-                    no one living with excessive sweating feels ashamed, unseen, or unsupported — in Nigeria, across Africa, 
-                    and around the world.
-                  </p>
-                  <p className="text-muted-foreground italic leading-relaxed">
-                    "My journey taught me that visibility is power. When we speak up, we make room for understanding, inclusion, and change."
-                  </p>
-                </CardContent>
-              </div>
-            </Card>
           </div>
         </div>
       </section>
@@ -418,41 +394,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-primary text-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Community Voices</h2>
-            <p className="text-xl opacity-90 max-w-2xl mx-auto">
-              Real stories from our community members
-            </p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:shadow-2xl transition-shadow">
-              <CardContent className="p-8 md:p-12">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
-                    <span className="text-3xl">👤</span>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-2">Bernard Adewumi</h3>
-                    <p className="opacity-80">Community Member</p>
-                  </div>
-                </div>
-                <p className="text-lg leading-relaxed opacity-90 italic">
-                  "Finding Beyond Sweat Foundation has been life-changing. For years, I struggled with 
-                  hyperhidrosis in silence, thinking I was alone. This community showed me I'm not alone, 
-                  and the resources provided through SweatSmart have helped me manage my condition better 
-                  than I ever thought possible. Thank you for creating this space where we can share our 
-                  experiences and support each other."
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Spotlight Nigeria Section */}
       <section id="spotlight" className="py-20 bg-background">
         <div className="container mx-auto px-4">
@@ -502,27 +443,174 @@ const Index = () => {
       </section>
 
       {/* Volunteer Section */}
-      <section id="volunteer" className="py-20 bg-primary text-white">
+      <section id="volunteer" className="py-20 bg-muted">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-              <span className="text-5xl">🤝</span>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Volunteer With Us</h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Be part of the movement that's changing lives across Nigeria and beyond
+              </p>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Volunteer With Us</h2>
-            <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-              Be part of the movement. Whether you're a healthcare professional, educator, or passionate 
-              advocate, there's a place for you in our community.
+            
+            <Card className="overflow-hidden hover:shadow-2xl transition-shadow">
+              <div className="relative h-64">
+                <img 
+                  src={volunteerImage} 
+                  alt="Volunteer with Beyond Sweat Foundation" 
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent"></div>
+              </div>
+              <CardContent className="p-8 md:p-12 text-center">
+                <p className="text-lg text-muted-foreground mb-6">
+                  Whether you're a healthcare professional, educator, or passionate advocate, there's a place 
+                  for you in our community. Join us in building awareness, supporting individuals, and driving 
+                  systemic change.
+                </p>
+                <Button 
+                  size="lg" 
+                  className="bg-primary hover:bg-primary-dark text-white"
+                  asChild
+                >
+                  <a href="https://forms.gle/M9Rjbdaq4CydJ7dq8" target="_blank" rel="noopener noreferrer">
+                    Apply to Volunteer
+                    <ExternalLink className="ml-2" size={20} />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Community Support Section */}
+      <section id="community-support" className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Community Support</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Connect, share, and find support from people who truly understand
             </p>
-            <Button 
-              size="lg" 
-              className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-6"
-              asChild
-            >
-              <a href="https://forms.gle/M9Rjbdaq4CydJ7dq8" target="_blank" rel="noopener noreferrer">
-                Apply to Volunteer
-                <ExternalLink className="ml-2" size={20} />
-              </a>
-            </Button>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <Card className="overflow-hidden hover:shadow-2xl transition-shadow border-2 border-accent">
+              <CardContent className="p-8 md:p-12 text-center">
+                <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-accent/10 flex items-center justify-center">
+                  <MessageCircle size={48} className="text-accent" />
+                </div>
+                <h3 className="text-2xl font-bold text-primary mb-4">Join Our Community</h3>
+                <p className="text-muted-foreground mb-6">
+                  Join our WhatsApp community where people share experiences, coping strategies, and victories. 
+                  Find understanding, acceptance, and practical support from those who truly get it.
+                </p>
+                <div className="space-y-4">
+                  <Button size="lg" className="w-full sm:w-auto bg-accent hover:bg-accent/90" asChild>
+                    <a href="https://chat.whatsapp.com/BKgrDMOttm76Jva6fSZUMi?mode=ac_t" target="_blank" rel="noopener noreferrer">
+                      <MessageCircle className="mr-2" size={20} />
+                      Join WhatsApp Community
+                    </a>
+                  </Button>
+                  <div className="flex gap-3 justify-center flex-wrap">
+                    <Button variant="outline" size="lg" asChild>
+                      <a href="https://instagram.com/beyondsweatfoundation" target="_blank" rel="noopener noreferrer">
+                        <Instagram className="mr-2" size={20} />
+                        Instagram
+                      </a>
+                    </Button>
+                    <Button variant="outline" size="lg" asChild>
+                      <a href="https://facebook.com/beyondsweatfoundation" target="_blank" rel="noopener noreferrer">
+                        <Facebook className="mr-2" size={20} />
+                        Facebook
+                      </a>
+                    </Button>
+                    <Button variant="outline" size="lg" asChild>
+                      <a href="https://x.com/beyondsweatfoun" target="_blank" rel="noopener noreferrer">
+                        <Twitter className="mr-2" size={20} />
+                        X
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Community Voices (Testimonials) Section */}
+      <section id="testimonials" className="py-20 bg-primary text-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Community Voices</h2>
+            <p className="text-xl opacity-90 max-w-2xl mx-auto">
+              Real stories from our community members
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:shadow-2xl transition-shadow">
+              <CardContent className="p-8 md:p-12">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                    <span className="text-3xl">👤</span>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-2">Bernard Adewumi</h3>
+                    <p className="opacity-80">Community Member</p>
+                  </div>
+                </div>
+                <p className="text-lg leading-relaxed opacity-90 italic">
+                  "Finding Beyond Sweat Foundation has been life-changing. For years, I struggled with 
+                  hyperhidrosis in silence, thinking I was alone. This community showed me I'm not alone, 
+                  and the resources provided through SweatSmart have helped me manage my condition better 
+                  than I ever thought possible. Thank you for creating this space where we can share our 
+                  experiences and support each other."
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Founder Section */}
+      <section id="founder" className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Meet the Founder</h2>
+              <p className="text-xl text-muted-foreground">Turning personal struggle into collective empowerment</p>
+            </div>
+            <Card className="overflow-hidden hover:shadow-2xl transition-shadow">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="relative min-h-[400px]">
+                  <img 
+                    src={founderImage} 
+                    alt="Gifty Aruwajoye - Founder of Beyond Sweat Foundation" 
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+                <CardContent className="p-8 md:p-12 flex flex-col justify-center bg-gradient-to-br from-primary/5 to-accent/5">
+                  <h3 className="text-3xl font-bold text-primary mb-2">Meet Gifty Aruwajoye</h3>
+                  <p className="text-lg text-accent mb-4">Founder, Beyond Sweat Foundation</p>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    Growing up in Africa's hot climate, Gifty experienced firsthand the challenges of living with hyperhidrosis — 
+                    a condition that made even simple tasks feel isolating. Instead of staying silent, she turned her personal 
+                    struggle into purpose.
+                  </p>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    Through Beyond Sweat Foundation, Gifty is transforming awareness and care for hyperhidrosis by combining 
+                    lived experience, community education, and climate-aware health innovation. Her vision is to ensure that 
+                    no one living with excessive sweating feels ashamed, unseen, or unsupported — in Nigeria, across Africa, 
+                    and around the world.
+                  </p>
+                  <p className="text-muted-foreground italic leading-relaxed">
+                    "My journey taught me that visibility is power. When we speak up, we make room for understanding, inclusion, and change."
+                  </p>
+                </CardContent>
+              </div>
+            </Card>
           </div>
         </div>
       </section>
@@ -609,15 +697,15 @@ const Index = () => {
             </div>
             
             <div className="flex flex-wrap gap-6 justify-center">
-              <a href="#home" className="opacity-80 hover:opacity-100 transition-opacity">Home</a>
-              <a href="#about" className="opacity-80 hover:opacity-100 transition-opacity">About</a>
-              <a href="#what-we-do" className="opacity-80 hover:opacity-100 transition-opacity">What We Do</a>
+              <a href="/" className="opacity-80 hover:opacity-100 transition-opacity">Home</a>
+              <a href="/about" className="opacity-80 hover:opacity-100 transition-opacity">About</a>
               <a href="/events" className="opacity-80 hover:opacity-100 transition-opacity">Events</a>
               <a href="/blog" className="opacity-80 hover:opacity-100 transition-opacity">Blog</a>
-              <a href="/news" className="opacity-80 hover:opacity-100 transition-opacity">News</a>
-              <a href="#testimonials" className="opacity-80 hover:opacity-100 transition-opacity">Testimonials</a>
               <a href="/faq" className="opacity-80 hover:opacity-100 transition-opacity">FAQs</a>
-              <a href="#contact" className="opacity-80 hover:opacity-100 transition-opacity">Contact</a>
+              <a href="/privacy-policy" className="opacity-80 hover:opacity-100 transition-opacity">Privacy Policy</a>
+              <a href="/terms" className="opacity-80 hover:opacity-100 transition-opacity">Terms of Use</a>
+              <a href="/disclaimer" className="opacity-80 hover:opacity-100 transition-opacity">Disclaimer</a>
+              <a href="/cookie-policy" className="opacity-80 hover:opacity-100 transition-opacity">Cookie Policy</a>
             </div>
           </div>
           
