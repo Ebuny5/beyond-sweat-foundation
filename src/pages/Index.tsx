@@ -10,11 +10,8 @@ import heroBg2 from "@/assets/hero-bg-2.jpg";
 import spotlightImage from "@/assets/spotlight-nigeria.jpg";
 import schoolAwarenessImage from "@/assets/school-awareness.jpg";
 import researchPolicyImage from "@/assets/research-policy.jpg";
-import volunteerImage from "@/assets/volunteer.jpg";
-import workshopImage from "@/assets/workshop.jpg";
-import webinarImage from "@/assets/webinar.jpg";
-import supportGroupImage from "@/assets/support-group.jpg";
-import qaSessionImage from "@/assets/qa-session.jpg";
+import volunteerPlaceholder from "@/assets/volunteer-placeholder.jpg";
+import communityPlaceholder from "@/assets/community-placeholder.jpg";
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -417,7 +414,7 @@ const Index = () => {
             <Card className="overflow-hidden hover:shadow-2xl transition-shadow">
               <div className="relative h-64">
                 <img 
-                  src={volunteerImage} 
+                  src={volunteerPlaceholder} 
                   alt="Volunteer with Beyond Sweat Foundation" 
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -457,8 +454,16 @@ const Index = () => {
           
           <div className="max-w-4xl mx-auto">
             <Card className="overflow-hidden hover:shadow-2xl transition-shadow border-2 border-accent">
+              <div className="relative h-64">
+                <img 
+                  src={communityPlaceholder} 
+                  alt="Join Our Community" 
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-accent/90 to-transparent"></div>
+              </div>
               <CardContent className="p-8 md:p-12 text-center">
-                <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-accent/10 flex items-center justify-center">
+                <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-accent/10 flex items-center justify-center -mt-16 relative z-10 bg-white">
                   <MessageCircle size={48} className="text-accent" />
                 </div>
                 <h3 className="text-2xl font-bold text-primary mb-4">Join Our Community</h3>

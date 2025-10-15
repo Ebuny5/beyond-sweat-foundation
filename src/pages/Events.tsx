@@ -3,6 +3,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Calendar, Users, Video, MapPin, Instagram, Facebook, Twitter } from "lucide-react";
 import { useState } from "react";
+import webinarPlaceholder from "@/assets/webinar-placeholder.jpg";
+import qaPlaceholder from "@/assets/qa-placeholder.jpg";
+import workshopPlaceholder from "@/assets/workshop-placeholder.jpg";
+import supportPlaceholder from "@/assets/support-placeholder.jpg";
 
 const Events = () => {
   const [firstName, setFirstName] = useState("");
@@ -59,7 +63,7 @@ const Events = () => {
             <Card className="hover:shadow-xl transition-shadow overflow-hidden">
               <div className="relative h-48">
                 <img 
-                  src="/src/assets/webinar.jpg" 
+                  src={webinarPlaceholder} 
                   alt="Online Webinars" 
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -90,7 +94,7 @@ const Events = () => {
             <Card className="hover:shadow-xl transition-shadow overflow-hidden">
               <div className="relative h-48">
                 <img 
-                  src="/src/assets/qa-session.jpg" 
+                  src={qaPlaceholder} 
                   alt="Expert Q&A Sessions" 
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -134,7 +138,7 @@ const Events = () => {
             <Card className="hover:shadow-xl transition-shadow overflow-hidden">
               <div className="relative h-48">
                 <img 
-                  src="/src/assets/workshop.jpg" 
+                  src={workshopPlaceholder} 
                   alt="Awareness Workshops" 
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -168,7 +172,7 @@ const Events = () => {
             <Card className="hover:shadow-xl transition-shadow overflow-hidden">
               <div className="relative h-48">
                 <img 
-                  src="/src/assets/support-group.jpg" 
+                  src={supportPlaceholder} 
                   alt="Support Group Meetups" 
                   className="absolute inset-0 w-full h-full object-cover"
                 />
