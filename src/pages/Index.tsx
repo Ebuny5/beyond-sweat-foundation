@@ -7,6 +7,9 @@ import storyImage from "@/assets/campaign-banner.jpg";
 import campaignImage from "@/assets/team.png";
 import heroBg from "@/assets/hero-bg.jpg";
 import heroBg2 from "@/assets/hero-bg-2.jpg";
+import heroBg3 from "@/assets/hero-bg-3.jpg";
+import heroBg4 from "@/assets/hero-bg-4.jpg";
+import heroBg5 from "@/assets/hero-bg-5.jpg";
 import spotlightImage from "@/assets/spotlight-nigeria.jpg";
 import schoolAwarenessImage from "@/assets/school-awareness.jpg";
 import researchPolicyImage from "@/assets/research-policy.jpg";
@@ -16,7 +19,7 @@ import communityPlaceholder from "@/assets/community-placeholder.jpg";
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentHeroImage, setCurrentHeroImage] = useState(0);
-  const heroImages = [heroBg, heroBg2];
+  const heroImages = [heroBg, heroBg2, heroBg3, heroBg4, heroBg5];
 
   // Hero slideshow
   useState(() => {
@@ -253,7 +256,7 @@ const Index = () => {
                 <p className="text-muted-foreground mb-6">
                   Download the native Android app for offline access and enhanced features.
                 </p>
-                <Button className="w-full bg-accent hover:bg-accent/90" asChild>
+                <Button className="w-full bg-primary hover:bg-primary-dark" asChild>
                   <a 
                     href="https://github.com/Ebuny5/sweatsmart-apk/releases/download/v1.0.0/SweatSmart.apk" 
                     target="_blank" 
@@ -272,11 +275,11 @@ const Index = () => {
                   <span className="text-4xl">📊</span>
                 </div>
                 <h3 className="text-2xl font-bold text-primary mb-4">Features</h3>
-                <ul className="text-left text-muted-foreground space-y-2">
-                  <li>✅ Daily sweating triggers & patterns</li>
-                  <li>✅ Weather, stress, and food correlations</li>
-                  <li>✅ Symptom severity over time</li>
-                  <li>✅ Progress reports for your doctor</li>
+                <ul className="text-left text-muted-foreground space-y-2 list-disc list-inside">
+                  <li>Daily sweating triggers & patterns</li>
+                  <li>Weather, stress, and food correlations</li>
+                  <li>Symptom severity over time</li>
+                  <li>Progress reports for your doctor</li>
                 </ul>
               </CardContent>
             </Card>
@@ -463,10 +466,7 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-accent/90 to-transparent"></div>
               </div>
               <CardContent className="p-8 md:p-12 text-center">
-                <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-accent/10 flex items-center justify-center -mt-16 relative z-10 bg-white">
-                  <MessageCircle size={48} className="text-accent" />
-                </div>
-                <h3 className="text-2xl font-bold text-primary mb-4">Join Our Community</h3>
+                <h3 className="text-2xl font-bold text-primary mb-6 mt-4">Join Our Community</h3>
                 <p className="text-muted-foreground mb-6">
                   Join our WhatsApp community where people share experiences, coping strategies, and victories. 
                   Find understanding, acceptance, and practical support from those who truly get it.
