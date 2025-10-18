@@ -43,31 +43,18 @@ const Index = () => {
               <span className="sm:hidden">Beyond Sweat</span>
             </a>
 
-            {/* Desktop Menu */}
-            <ul className="hidden md:flex items-center gap-6 text-white">
-              <li><a href="#home" className="hover:text-accent transition-colors">Home</a></li>
-              <li><a href="#about" className="hover:text-accent transition-colors">About</a></li>
-              <li><a href="#what-we-do" className="hover:text-accent transition-colors">What We Do</a></li>
-              <li><a href="/events" className="hover:text-accent transition-colors">Events</a></li>
-              <li><a href="/blog" className="hover:text-accent transition-colors">Blog</a></li>
-              <li><a href="/news" className="hover:text-accent transition-colors">News</a></li>
-              <li><a href="#testimonials" className="hover:text-accent transition-colors">Testimonials</a></li>
-              <li><a href="/faq" className="hover:text-accent transition-colors">FAQs</a></li>
-              <li><a href="#contact" className="bg-primary hover:bg-primary-light px-4 py-2 rounded transition-colors">Contact</a></li>
-            </ul>
-
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - Now shown on all devices */}
             <button 
-              className="md:hidden text-white"
+              className="text-white"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
 
-          {/* Mobile Menu */}
+          {/* Mobile Menu - Now shown on all devices */}
           {mobileMenuOpen && (
-            <ul className="md:hidden mt-4 space-y-3 pb-4 text-white">
+            <ul className="mt-4 space-y-3 pb-4 text-white">
               <li><a href="#home" className="block hover:text-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>Home</a></li>
               <li><a href="#about" className="block hover:text-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>About</a></li>
               <li><a href="#what-we-do" className="block hover:text-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>What We Do</a></li>
@@ -654,29 +641,60 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary-dark text-white py-12">
+      <footer className="bg-[#0f172a] text-white py-16">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-center md:text-left">
-              <h3 className="text-xl font-bold mb-2">Beyond Sweat Foundation</h3>
-              <p className="opacity-80">Climate • Health • Justice</p>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            {/* Brand Section */}
+            <div className="col-span-1">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-10 h-10 rounded bg-primary flex items-center justify-center text-white font-bold">
+                  BS
+                </div>
+                <h3 className="text-lg font-bold">Beyond Sweat Foundation</h3>
+              </div>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                Climate-aware health advocacy for people with hyperhidrosis across Nigeria, Africa, and beyond.
+              </p>
             </div>
-            
-            <div className="flex flex-wrap gap-6 justify-center">
-              <a href="/" className="opacity-80 hover:opacity-100 transition-opacity">Home</a>
-              <a href="/about" className="opacity-80 hover:opacity-100 transition-opacity">About</a>
-              <a href="/events" className="opacity-80 hover:opacity-100 transition-opacity">Events</a>
-              <a href="/blog" className="opacity-80 hover:opacity-100 transition-opacity">Blog</a>
-              <a href="/faq" className="opacity-80 hover:opacity-100 transition-opacity">FAQs</a>
-              <a href="/privacy-policy" className="opacity-80 hover:opacity-100 transition-opacity">Privacy Policy</a>
-              <a href="/terms" className="opacity-80 hover:opacity-100 transition-opacity">Terms of Use</a>
-              <a href="/disclaimer" className="opacity-80 hover:opacity-100 transition-opacity">Disclaimer</a>
-              <a href="/cookie-policy" className="opacity-80 hover:opacity-100 transition-opacity">Cookie Policy</a>
+
+            {/* Organization Links */}
+            <div>
+              <h4 className="font-semibold mb-4 text-white">Organization</h4>
+              <ul className="space-y-3 text-sm">
+                <li><a href="/" className="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                <li><a href="/about" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                <li><a href="#what-we-do" className="text-gray-400 hover:text-white transition-colors">What We Do</a></li>
+                <li><a href="#contact" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+              </ul>
+            </div>
+
+            {/* Resources Links */}
+            <div>
+              <h4 className="font-semibold mb-4 text-white">Resources</h4>
+              <ul className="space-y-3 text-sm">
+                <li><a href="/events" className="text-gray-400 hover:text-white transition-colors">Events</a></li>
+                <li><a href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                <li><a href="/news" className="text-gray-400 hover:text-white transition-colors">News</a></li>
+                <li><a href="/faq" className="text-gray-400 hover:text-white transition-colors">FAQs</a></li>
+              </ul>
+            </div>
+
+            {/* Legal Links */}
+            <div>
+              <h4 className="font-semibold mb-4 text-white">Legal</h4>
+              <ul className="space-y-3 text-sm">
+                <li><a href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                <li><a href="/terms" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                <li><a href="/cookie-policy" className="text-gray-400 hover:text-white transition-colors">Cookie Policy</a></li>
+                <li><a href="/disclaimer" className="text-gray-400 hover:text-white transition-colors">Disclaimer</a></li>
+              </ul>
             </div>
           </div>
           
-          <div className="mt-8 pt-8 border-t border-white/20 text-center opacity-80">
-            <p>&copy; {new Date().getFullYear()} Beyond Sweat Foundation. All rights reserved.</p>
+          <div className="pt-8 border-t border-gray-800 text-center">
+            <p className="text-sm text-gray-400">
+              &copy; {new Date().getFullYear()} Beyond Sweat Foundation. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>
