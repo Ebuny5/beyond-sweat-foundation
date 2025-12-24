@@ -36,8 +36,7 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <a href="#home" className="flex items-center gap-2 text-white font-bold text-xl">
               <img src={logo} alt="Beyond Sweat Foundation Logo" className="w-10 h-10 rounded-full object-cover" />
-              <span className="hidden sm:inline">Beyond Sweat Foundation</span>
-              <span className="sm:hidden">Beyond Sweat</span>
+              <span>Beyond Sweat Foundation</span>
             </a>
 
             {/* Mobile Menu Button - Now shown on all devices */}
@@ -673,6 +672,8 @@ const Index = () => {
                 <li><a href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
                 <li><a href="/news" className="text-gray-400 hover:text-white transition-colors">News</a></li>
                 <li><a href="/faq" className="text-gray-400 hover:text-white transition-colors">FAQs</a></li>
+                <li><a href="https://ebuny.substack.com/p/when-data-is-invisible-people-are" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors flex items-center gap-1">When Data Is Invisible <ExternalLink size={12} /></a></li>
+                <li><a href="https://medium.com/@giftyaruwajoye/breaking-the-silence-why-hyperhidrosis-education-belongs-in-nigerias-medical-curriculum-69585cf8d78a" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors flex items-center gap-1">Breaking the Silence <ExternalLink size={12} /></a></li>
               </ul>
             </div>
 
