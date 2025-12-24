@@ -15,6 +15,7 @@ import schoolAwarenessImage from "@/assets/school-awareness.jpg";
 import researchPolicyImage from "@/assets/research-policy.jpg";
 import volunteerPlaceholder from "@/assets/volunteer-placeholder.jpg";
 import communityPlaceholder from "@/assets/community-placeholder.jpg";
+import logo from "@/assets/logo.png";
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -36,9 +37,7 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <a href="#home" className="flex items-center gap-2 text-white font-bold text-xl">
-              <div className="w-10 h-10 rounded bg-primary flex items-center justify-center text-white font-bold">
-                BS
-              </div>
+              <img src={logo} alt="Beyond Sweat Foundation Logo" className="w-10 h-10 rounded-full object-cover" />
               <span className="hidden sm:inline">Beyond Sweat Foundation</span>
               <span className="sm:hidden">Beyond Sweat</span>
             </a>
