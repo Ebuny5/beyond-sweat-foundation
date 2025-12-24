@@ -194,7 +194,7 @@ const ResearchPolicy = () => {
                 We welcome partnerships with researchers, institutions, and advocates committed to health equity.
               </p>
               <Button size="lg" className="bg-primary hover:bg-primary-dark" asChild>
-                <a href="/#contact">Get In Touch</a>
+                <a href="tel:+2348112289385">Get In Touch</a>
               </Button>
             </div>
           </div>
