@@ -643,9 +643,7 @@ const Index = () => {
             {/* Brand Section */}
             <div className="col-span-1">
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 rounded bg-primary flex items-center justify-center text-white font-bold">
-                  BS
-                </div>
+                <img src={logo} alt="Beyond Sweat Foundation Logo" className="w-10 h-10 rounded-full object-cover" />
                 <h3 className="text-lg font-bold">Beyond Sweat Foundation</h3>
               </div>
               <p className="text-sm text-gray-400 leading-relaxed">
