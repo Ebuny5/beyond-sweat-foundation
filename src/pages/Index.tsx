@@ -523,6 +523,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Newsletter Signup */}
+      <NewsletterSignup />
+
       {/* Founder Section */}
       <section id="founder" className="py-20 bg-muted">
         <div className="container mx-auto px-4">
