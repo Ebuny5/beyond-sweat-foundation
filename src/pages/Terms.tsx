@@ -161,7 +161,7 @@ const Terms = () => {
                     If you have questions, feedback, or requests related to these Terms, contact us:
                   </p>
                   <p className="text-muted-foreground">
-                    📧 <a href="mailto:info@beyondsweat.life" className="text-primary hover:underline">info@beyondsweat.life</a><br />
+                    📧 <a href="mailto:info@beyondsweat.org" className="text-primary hover:underline">info@beyondsweat.org</a><br />
                     🌍 <a href="https://www.beyondsweat.life" className="text-primary hover:underline">www.beyondsweat.life</a>
                   </p>
                 </div>

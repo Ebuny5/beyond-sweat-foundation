@@ -585,10 +585,10 @@ const Index = () => {
                       <div>
                         <h3 className="text-xl font-bold text-primary mb-2">Email Us</h3>
                         <a 
-                          href="mailto:info@beyondsweat.life" 
+                          href="mailto:info@beyondsweat.org" 
                           className="text-muted-foreground hover:text-primary transition-colors"
                         >
-                          info@beyondsweat.life
+                          info@beyondsweat.org
                         </a>
                       </div>
                     </div>
@@ -617,7 +617,7 @@ const Index = () => {
                     </p>
                     <div className="flex gap-4">
                       <Button variant="outline" asChild>
-                        <a href="mailto:info@beyondsweat.life">
+                        <a href="mailto:info@beyondsweat.org">
                           Send Email
                         </a>
                       </Button>
