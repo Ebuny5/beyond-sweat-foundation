@@ -13,6 +13,7 @@ import researchPolicyImage from "@/assets/research-policy.jpg";
 import volunteerPlaceholder from "@/assets/volunteer-placeholder.jpg";
 import communityPlaceholder from "@/assets/community-placeholder.jpg";
 import logo from "@/assets/logo.png";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
