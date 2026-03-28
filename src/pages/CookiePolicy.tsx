@@ -101,7 +101,7 @@ const CookiePolicy = () => {
                     <li>Request deletion of your data.</li>
                   </ul>
                   <p className="text-muted-foreground mt-4">
-                    To exercise these rights, contact us at <a href="mailto:info@beyondsweat.life" className="text-primary hover:underline">info@beyondsweat.life</a>.
+                    To exercise these rights, contact us at <a href="mailto:info@beyondsweat.org" className="text-primary hover:underline">info@beyondsweat.org</a>.
                   </p>
                 </div>
 
@@ -119,7 +119,7 @@ const CookiePolicy = () => {
                     If you have questions about this policy or how your data is handled, please contact:
                   </p>
                   <p className="text-muted-foreground">
-                    📧 <a href="mailto:info@beyondsweat.life" className="text-primary hover:underline">info@beyondsweat.life</a><br />
+                    📧 <a href="mailto:info@beyondsweat.org" className="text-primary hover:underline">info@beyondsweat.org</a><br />
                     🌍 Beyond Sweat Foundation
                   </p>
                 </div>

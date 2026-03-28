@@ -123,7 +123,7 @@ const PrivacyPolicy = () => {
                     <li>Request deletion of your data ("Right to be Forgotten")</li>
                   </ul>
                   <p className="text-muted-foreground mt-4">
-                    To exercise these rights, contact us at: <a href="mailto:info@beyondsweat.life" className="text-primary hover:underline">info@beyondsweat.life</a>
+                    To exercise these rights, contact us at: <a href="mailto:info@beyondsweat.org" className="text-primary hover:underline">info@beyondsweat.org</a>
                   </p>
                 </div>
 
@@ -158,7 +158,7 @@ const PrivacyPolicy = () => {
                   </p>
                   <p className="text-muted-foreground">
                     <strong>Beyond Sweat Foundation</strong><br />
-                    Email: <a href="mailto:info@beyondsweat.life" className="text-primary hover:underline">info@beyondsweat.life</a><br />
+                    Email: <a href="mailto:info@beyondsweat.org" className="text-primary hover:underline">info@beyondsweat.org</a><br />
                     Website: <a href="https://www.beyondsweat.life" className="text-primary hover:underline">www.beyondsweat.life</a>
                   </p>
                 </div>
