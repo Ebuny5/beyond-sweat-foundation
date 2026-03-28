@@ -17,7 +17,7 @@ import logo from "@/assets/logo.png";
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentHeroImage, setCurrentHeroImage] = useState(0);
-  const heroImages = [heroBg, heroBg4, heroBg5];
+  const heroImages = [heroBg, heroBg5];
 
   // Hero slideshow
   useState(() => {
