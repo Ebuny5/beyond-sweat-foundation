@@ -104,7 +104,7 @@ const Index = () => {
               className="bg-primary hover:bg-primary-dark text-white font-semibold text-base px-6 py-6"
               asChild
             >
-              <a href="https://forms.gle/spotlightsurvey" target="_blank" rel="noopener noreferrer">
+              <a href="http://go.beyondsweat.org/J7ws6M" target="_blank" rel="noopener noreferrer">
                 Take the Spotlight Survey
               </a>
             </Button>
