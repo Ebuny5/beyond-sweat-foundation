@@ -6,7 +6,6 @@ import founderImage from "@/assets/founder.jpg";
 import storyImage from "@/assets/campaign-banner.jpg";
 import campaignImage from "@/assets/team.png";
 import heroBg from "@/assets/hero-bg.jpg";
-import heroBg4 from "@/assets/hero-bg-4.jpg";
 import heroBg5 from "@/assets/hero-bg-5.jpg";
 import spotlightImage from "@/assets/spotlight-nigeria.jpg";
 import schoolAwarenessImage from "@/assets/school-awareness.jpg";
@@ -18,7 +17,7 @@ import logo from "@/assets/logo.png";
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentHeroImage, setCurrentHeroImage] = useState(0);
-  const heroImages = [heroBg, heroBg4, heroBg5];
+  const heroImages = [heroBg, heroBg5];
 
   // Hero slideshow
   useState(() => {
