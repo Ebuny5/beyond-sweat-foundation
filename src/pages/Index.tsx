@@ -6,7 +6,6 @@ import founderImage from "@/assets/founder.jpg";
 import storyImage from "@/assets/campaign-banner.jpg";
 import campaignImage from "@/assets/team.png";
 import heroBg from "@/assets/hero-bg.jpg";
-import heroBg4 from "@/assets/hero-bg-4.jpg";
 import heroBg5 from "@/assets/hero-bg-5.jpg";
 import spotlightImage from "@/assets/spotlight-nigeria.jpg";
 import schoolAwarenessImage from "@/assets/school-awareness.jpg";
