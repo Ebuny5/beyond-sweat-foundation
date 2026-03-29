@@ -11,9 +11,9 @@ serve(async (req) => {
   }
 
   try {
-    const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
-    if (!RESEND_API_KEY) {
-      throw new Error("RESEND_API_KEY is not configured");
+    const BREVO_API_KEY = Deno.env.get("BREVO_API_KEY");
+    if (!BREVO_API_KEY) {
+      throw new Error("BREVO_API_KEY is not configured");
     }
 
     const { email } = await req.json();
@@ -40,24 +40,24 @@ serve(async (req) => {
   <p style="font-size: 12px; color: #888;">Sent with grace from Beyond Sweat Foundation | Akure, Nigeria</p>
 </div>`;
 
-    const res = await fetch("https://api.resend.com/emails", {
+    const res = await fetch("https://api.brevo.com/v3/smtp/email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${RESEND_API_KEY}`,
+        "api-key": BREVO_API_KEY,
       },
       body: JSON.stringify({
-        from: "Beyond Sweat Foundation <info@beyondsweat.org>",
-        to: [email],
+        sender: { name: "Beyond Sweat Foundation", email: "info@beyondsweat.org" },
+        to: [{ email }],
         subject: "Welcome to the Movement, Warrior! 🌍",
-        html: htmlContent,
+        htmlContent,
       }),
     });
 
     const data = await res.json();
     if (!res.ok) {
-      console.error("Resend API error:", data);
-      throw new Error(`Resend API error [${res.status}]: ${JSON.stringify(data)}`);
+      console.error("Brevo API error:", data);
+      throw new Error(`Brevo API error [${res.status}]: ${JSON.stringify(data)}`);
     }
 
     return new Response(JSON.stringify({ success: true }), {
