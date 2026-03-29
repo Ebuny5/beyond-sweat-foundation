@@ -136,7 +136,7 @@ const Blog = () => {
                   Remember that hyperhidrosis management is highly personal—what works for one person may not work for another. Don't be afraid to experiment with different combinations of the products mentioned to find your perfect sweat management system.
                 </p>
                 <p className="text-center text-lg font-semibold text-primary">
-                  For more hyperhidrosis management tips and product recommendations, visit <a href="https://beyondsweat.life" className="underline hover:text-primary-dark">beyondsweat.life</a>
+                  For more hyperhidrosis management tips and product recommendations, visit <a href="https://beyondsweat.org" className="underline hover:text-primary-dark">beyondsweat.org</a>
                 </p>
               </CardContent>
             </Card>
