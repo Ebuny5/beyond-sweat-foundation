@@ -342,9 +342,9 @@ const Index = () => {
       <section id="spotlight" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Spotlight Nigeria</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Spotlight Africa: Building the First Pan-African Comprehensive Hyperhidrosis Dataset</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Building Nigeria's first comprehensive hyperhidrosis dataset
+              Building the first Pan-African comprehensive hyperhidrosis dataset
             </p>
           </div>
           
@@ -353,7 +353,7 @@ const Index = () => {
               <div className="relative h-64">
                 <img 
                   src={spotlightImage} 
-                  alt="Spotlight Nigeria - Data Collection & Research" 
+                  alt="Spotlight Africa - Data Collection & Research" 
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent"></div>
@@ -363,12 +363,10 @@ const Index = () => {
               </div>
               <CardContent className="p-8 md:p-12">
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  Building Nigeria's first comprehensive hyperhidrosis dataset through the Spotlight survey 
-                  and SweatSmart app. Evidence drives policy, clinical research, and funding.
+                  Building the first Pan-African comprehensive hyperhidrosis dataset. By combining data from our community survey and the SweatSmart app, we are creating the localised evidence needed to drive policy, clinical research, and funding across the continent.
                 </p>
                 <p className="text-muted-foreground mb-6">
-                  Your anonymous survey response will inform policy, advocacy, and clinical research. 
-                  Taking just 3 minutes of your time can create lasting impact for our community.
+                  Your anonymous survey response is the first step to bridging the data gap. Taking just 3 to 5 minutes of your time informs healthcare advocacy and advances medical understanding for the African community.
                 </p>
                 <Button 
                   size="lg" 
