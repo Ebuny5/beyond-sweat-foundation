@@ -2,7 +2,7 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
 
 serve(async (req) => {
@@ -12,11 +12,15 @@ serve(async (req) => {
 
   try {
     const BREVO_API_KEY = Deno.env.get("BREVO_API_KEY");
+    console.log("BREVO_API_KEY present:", !!BREVO_API_KEY);
+    
     if (!BREVO_API_KEY) {
       throw new Error("BREVO_API_KEY is not configured");
     }
 
     const { email } = await req.json();
+    console.log("Sending welcome email to:", email);
+    
     if (!email || typeof email !== "string") {
       return new Response(
         JSON.stringify({ error: "Valid email is required" }),
@@ -55,8 +59,10 @@ serve(async (req) => {
     });
 
     const data = await res.json();
+    console.log("Brevo API response status:", res.status);
+    console.log("Brevo API response:", JSON.stringify(data));
+    
     if (!res.ok) {
-      console.error("Brevo API error:", data);
       throw new Error(`Brevo API error [${res.status}]: ${JSON.stringify(data)}`);
     }
 
