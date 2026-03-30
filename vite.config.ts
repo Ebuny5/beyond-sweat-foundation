@@ -1,22 +1,18 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
+import { componentTagger } from "lovable-tagger";
 
-// lovable-tagger is a dev-only tool — loaded dynamically to avoid ESM/CJS issues in production
-export default defineConfig(async ({ mode }) => {
-  const plugins = [react()];
-
-  if (mode === "development") {
-    const { componentTagger } = await import("lovable-tagger");
-    plugins.push(componentTagger());
-  }
-
-  return {
-    plugins,
-    resolve: {
-      alias: {
-        "@": path.resolve(__dirname, "./src"),
-      },
+// https://vitejs.dev/config/
+export default defineConfig(({ mode }) => ({
+  server: {
+    host: "::",
+    port: 8080,
+  },
+  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
     },
-  };
-});
+  },
+}));
