@@ -8,7 +8,7 @@ export default defineConfig(async ({ mode }) => {
 
   if (mode === "development") {
     const { componentTagger } = await import("lovable-tagger");
-    plugins.push(componentTagger() as any);
+    plugins.push(componentTagger());
   }
 
   return {
