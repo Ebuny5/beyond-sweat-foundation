@@ -103,11 +103,13 @@ const ChartTooltipContent = React.forwardRef<
   (
     {
       active,
+      // @ts-ignore recharts type mismatch
       payload,
       className,
       indicator = "dot",
       hideLabel = false,
       hideIndicator = false,
+      // @ts-ignore recharts type mismatch
       label,
       labelFormatter,
       labelClassName,
@@ -230,10 +232,12 @@ const ChartLegend = RechartsPrimitive.Legend;
 const ChartLegendContent = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"div"> &
+    // @ts-ignore recharts type mismatch
     Pick<RechartsPrimitive.LegendProps, "payload" | "verticalAlign"> & {
       hideIcon?: boolean;
       nameKey?: string;
     }
+// @ts-ignore recharts type mismatch
 >(({ className, hideIcon = false, payload, verticalAlign = "bottom", nameKey }, ref) => {
   const { config } = useChart();
 
