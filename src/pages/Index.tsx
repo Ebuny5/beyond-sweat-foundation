@@ -808,42 +808,11 @@ const Index = () => {
                 <MessageCircle size={20} />
                 Join WhatsApp Community
               </a>
-              <div className="social-row">
-                <a href="https://instagram.com/beyondsweatfoundation" target="_blank" rel="noopener noreferrer" className="btn-social">
-                  <Instagram size={16} /> Instagram
-                </a>
-                <a href="https://facebook.com/beyondsweatfoundation" target="_blank" rel="noopener noreferrer" className="btn-social">
-                  <Facebook size={16} /> Facebook
-                </a>
-                <a href="https://x.com/beyondsweatfoun" target="_blank" rel="noopener noreferrer" className="btn-social">
-                  <Twitter size={16} /> X
-                </a>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── WATCH MY STORY — slim strip ── */}
-      <section className="section section-alt" id="story">
-        <div className="container">
-          <div className="story-strip">
-            <div className="story-img">
-              <img src={storyImage} alt="Founder Gifty Aruwajoye - personal journey with hyperhidrosis that inspired Beyond Sweat Foundation" />
-            </div>
-            <div className="story-content">
-              <div className="story-text">
-                <h3>Watch Gifty's Story</h3>
-                <p>Before the foundation, before the app, before any of this — there was one woman sitting with a condition nobody around her understood. Watch Gifty tell her story in her own words, and why she refused to stay silent.</p>
-              </div>
-              <a href="https://youtu.be/CVOXL4lWMBo" target="_blank" rel="noopener noreferrer" className="story-btn">
-                <Play size={16} />
-                Watch on YouTube
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
 
 
 
@@ -880,6 +849,34 @@ const Index = () => {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FOLLOW US ── */}
+      <section className="section section-alt">
+        <div className="container">
+          <div className="section-header center">
+            <p className="section-tag">Connect</p>
+            <h2 className="section-title">Follow Us on Social Media</h2>
+            <p className="section-sub">Stay updated with the latest from Beyond Sweat Foundation across our platforms.</p>
+          </div>
+          <div style={{ display: "flex", justifyContent: "center", gap: 14, flexWrap: "wrap" }}>
+            <a href="https://instagram.com/beyondsweatfoundation" target="_blank" rel="noopener noreferrer" className="btn-social">
+              <Instagram size={18} /> Instagram
+            </a>
+            <a href="https://facebook.com/beyondsweatfoundation" target="_blank" rel="noopener noreferrer" className="btn-social">
+              <Facebook size={18} /> Facebook
+            </a>
+            <a href="https://x.com/beyondsweatfoun" target="_blank" rel="noopener noreferrer" className="btn-social">
+              <Twitter size={18} /> X
+            </a>
+            <a href="https://www.linkedin.com/company/beyond-sweat-foundation/" target="_blank" rel="noopener noreferrer" className="btn-social">
+              <ExternalLink size={18} /> LinkedIn
+            </a>
+            <a href="https://www.youtube.com/@beyondsweatfoundation" target="_blank" rel="noopener noreferrer" className="btn-social">
+              <Play size={18} /> YouTube
+            </a>
           </div>
         </div>
       </section>
