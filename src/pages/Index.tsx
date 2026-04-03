@@ -813,26 +813,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── WATCH MY STORY — slim strip ── */}
-      <section className="section section-alt" id="story">
-        <div className="container">
-          <div className="story-strip">
-            <div className="story-img">
-              <img src={storyImage} alt="Founder Gifty Aruwajoye - personal journey with hyperhidrosis that inspired Beyond Sweat Foundation" />
-            </div>
-            <div className="story-content">
-              <div className="story-text">
-                <h3>Watch Gifty's Story</h3>
-                <p>Before the foundation, before the app, before any of this — there was one woman sitting with a condition nobody around her understood. Watch Gifty tell her story in her own words, and why she refused to stay silent.</p>
-              </div>
-              <a href="https://youtu.be/CVOXL4lWMBo" target="_blank" rel="noopener noreferrer" className="story-btn">
-                <Play size={16} />
-                Watch on YouTube
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
 
 
 
