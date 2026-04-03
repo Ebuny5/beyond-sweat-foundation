@@ -853,6 +853,34 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ── FOLLOW US ── */}
+      <section className="section section-alt">
+        <div className="container">
+          <div className="section-header center">
+            <p className="section-tag">Connect</p>
+            <h2 className="section-title">Follow Us on Social Media</h2>
+            <p className="section-sub">Stay updated with the latest from Beyond Sweat Foundation across our platforms.</p>
+          </div>
+          <div style={{ display: "flex", justifyContent: "center", gap: 14, flexWrap: "wrap" }}>
+            <a href="https://instagram.com/beyondsweatfoundation" target="_blank" rel="noopener noreferrer" className="btn-social">
+              <Instagram size={18} /> Instagram
+            </a>
+            <a href="https://facebook.com/beyondsweatfoundation" target="_blank" rel="noopener noreferrer" className="btn-social">
+              <Facebook size={18} /> Facebook
+            </a>
+            <a href="https://x.com/beyondsweatfoun" target="_blank" rel="noopener noreferrer" className="btn-social">
+              <Twitter size={18} /> X
+            </a>
+            <a href="https://www.linkedin.com/company/beyond-sweat-foundation/" target="_blank" rel="noopener noreferrer" className="btn-social">
+              <ExternalLink size={18} /> LinkedIn
+            </a>
+            <a href="https://www.youtube.com/@beyondsweatfoundation" target="_blank" rel="noopener noreferrer" className="btn-social">
+              <Play size={18} /> YouTube
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ── CONTACT ── */}
       <section id="contact" className="section">
         <div className="container">
