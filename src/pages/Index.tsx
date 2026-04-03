@@ -808,17 +808,6 @@ const Index = () => {
                 <MessageCircle size={20} />
                 Join WhatsApp Community
               </a>
-              <div className="social-row">
-                <a href="https://instagram.com/beyondsweatfoundation" target="_blank" rel="noopener noreferrer" className="btn-social">
-                  <Instagram size={16} /> Instagram
-                </a>
-                <a href="https://facebook.com/beyondsweatfoundation" target="_blank" rel="noopener noreferrer" className="btn-social">
-                  <Facebook size={16} /> Facebook
-                </a>
-                <a href="https://x.com/beyondsweatfoun" target="_blank" rel="noopener noreferrer" className="btn-social">
-                  <Twitter size={16} /> X
-                </a>
-              </div>
             </div>
           </div>
         </div>
