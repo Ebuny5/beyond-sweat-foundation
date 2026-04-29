@@ -487,7 +487,7 @@ const Index = () => {
             <a href="/news">News</a>
             <a href="/faq">FAQs</a>
             <a href="#contact">Contact</a>
-            <a href="http://go.beyondsweat.org/J7ws6M" target="_blank" rel="noopener noreferrer" className="nav-cta">Take the Survey</a>
+            <a href="https://beyondsweat.org/kaAU4N" target="_blank" rel="noopener noreferrer" className="nav-cta">Take the Survey</a>
           </div>
           <button className="hamburger" aria-label="Open menu" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -503,7 +503,7 @@ const Index = () => {
               { href: "/news", label: "News" },
               { href: "/faq", label: "FAQs" },
               { href: "#contact", label: "Contact" },
-              { href: "http://go.beyondsweat.org/J7ws6M", label: "Take the Survey →", target: "_blank" },
+              { href: "https://beyondsweat.org/kaAU4N", label: "Take the Survey →", target: "_blank" },
             ].map(link => (
               <a key={link.href} href={link.href} target={link.target} rel={link.target ? "noopener noreferrer" : undefined} onClick={() => setMobileMenuOpen(false)}>{link.label}</a>
             ))}
@@ -524,7 +524,7 @@ const Index = () => {
               Beyond Sweat Foundation combines lived experience, education, and climate-aware innovation to support people with hyperhidrosis across Nigeria, Africa, and the world.
             </p>
             <div className="hero-btns">
-              <a href="http://go.beyondsweat.org/J7ws6M" target="_blank" rel="noopener noreferrer" className="btn-primary">
+              <a href="https://beyondsweat.org/kaAU4N" target="_blank" rel="noopener noreferrer" className="btn-primary">
                 Take the Spotlight Survey
               </a>
               <a href="#volunteer" className="btn-secondary">
@@ -699,7 +699,7 @@ const Index = () => {
                 <p>
                   Your anonymous response takes just 3–5 minutes and helps bridge a critical data gap for the African healthcare community.
                 </p>
-                <a href="http://go.beyondsweat.org/J7ws6M" target="_blank" rel="noopener noreferrer" className="btn-primary">
+                <a href="https://beyondsweat.org/kaAU4N" target="_blank" rel="noopener noreferrer" className="btn-primary">
                   Take the Survey
                   <ExternalLink size={16} />
                 </a>
