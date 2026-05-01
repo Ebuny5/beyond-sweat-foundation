@@ -3,19 +3,18 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import blogHeroImage from "@/assets/blog-hero.jpg";
 import warriorHero from "@/assets/blog-warrior-hero.jpg";
+import logo from "@/assets/logo.png";
 import NotFound from "./NotFound";
 
 const Nav = () => (
-  <nav className="fixed top-0 w-full z-50 bg-primary-dark shadow-lg">
+  <nav className="fixed top-0 w-full z-50 bg-white shadow-md border-b">
     <div className="container mx-auto px-4 py-4">
       <div className="flex items-center justify-between">
-        <a href="/" className="flex items-center gap-2 text-white font-bold text-xl">
-          <div className="w-10 h-10 rounded bg-primary flex items-center justify-center text-white font-bold">
-            BS
-          </div>
+        <a href="/" className="flex items-center gap-2 text-primary font-bold text-xl">
+          <img src={logo} alt="Beyond Sweat Foundation Logo" className="w-10 h-10 rounded-full object-cover" />
           <span className="hidden sm:inline">Beyond Sweat Foundation</span>
         </a>
-        <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary" asChild>
+        <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white" asChild>
           <a href="/blog">Back to Blog</a>
         </Button>
       </div>

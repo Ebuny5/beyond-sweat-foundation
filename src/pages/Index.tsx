@@ -51,8 +51,9 @@ const Index = () => {
         /* NAV */
         .nav {
           position: fixed; top: 0; width: 100%; z-index: 100;
-          background: var(--purple-dark);
-          box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+          background: #fff;
+          box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+          border-bottom: 1px solid var(--border);
         }
         .nav-inner {
           max-width: 1200px; margin: 0 auto; padding: 0 24px;
@@ -61,28 +62,28 @@ const Index = () => {
         }
         .nav-brand {
           display: flex; align-items: center; gap: 10px;
-          text-decoration: none; color: #fff; font-weight: 700; font-size: 18px;
+          text-decoration: none; color: var(--purple); font-weight: 700; font-size: 18px;
         }
         .nav-brand img { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; }
         .nav-links { display: flex; align-items: center; gap: 32px; }
         .nav-links a {
-          color: rgba(255,255,255,0.85); text-decoration: none;
+          color: var(--purple); text-decoration: none;
           font-size: 14px; font-weight: 500; letter-spacing: 0.02em;
           transition: color 0.2s;
         }
-        .nav-links a:hover { color: #fff; }
+        .nav-links a:hover { color: var(--purple-light); }
         .nav-cta {
           background: var(--accent); color: #1a1a2e !important;
           padding: 8px 18px; border-radius: 6px; font-weight: 700 !important;
         }
-        .hamburger { display: none; background: none; border: none; color: #fff; cursor: pointer; padding: 4px; }
+        .hamburger { display: none; background: none; border: none; color: var(--purple); cursor: pointer; padding: 4px; }
         .mobile-menu {
-          background: var(--purple-dark); padding: 16px 24px 24px;
-          border-top: 1px solid rgba(255,255,255,0.1);
+          background: #fff; padding: 16px 24px 24px;
+          border-top: 1px solid var(--border);
         }
         .mobile-menu a {
-          display: block; color: rgba(255,255,255,0.85); text-decoration: none;
-          padding: 12px 0; font-size: 16px; border-bottom: 1px solid rgba(255,255,255,0.08);
+          display: block; color: var(--purple); text-decoration: none;
+          padding: 12px 0; font-size: 16px; border-bottom: 1px solid var(--border);
         }
         .mobile-menu a:last-child { border-bottom: none; }
 

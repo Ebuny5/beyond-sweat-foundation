@@ -1,15 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const About = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation Bar */}
-      <nav className="fixed top-0 w-full z-50 bg-primary-dark shadow-lg">
+      <nav className="fixed top-0 w-full z-50 bg-white shadow-md border-b">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center gap-4">
-            <Button variant="ghost" className="text-white hover:bg-white/10" asChild>
+          <div className="flex items-center justify-between">
+            <a href="/" className="flex items-center gap-2 text-primary font-bold text-xl">
+              <img src={logo} alt="Beyond Sweat Foundation Logo" className="w-10 h-10 rounded-full object-cover" />
+              <span className="hidden sm:inline">Beyond Sweat Foundation</span>
+            </a>
+            <Button variant="ghost" className="text-primary hover:bg-primary/5" asChild>
               <a href="/">
                 <ArrowLeft className="mr-2" size={20} />
                 Back to Home
