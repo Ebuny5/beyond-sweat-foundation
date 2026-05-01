@@ -9,6 +9,7 @@ import Events from "./pages/Events";
 import SchoolAwareness from "./pages/SchoolAwareness";
 import ResearchPolicy from "./pages/ResearchPolicy";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import News from "./pages/News";
 import FAQ from "./pages/FAQ";
 import About from "./pages/About";
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/school-awareness" element={<SchoolAwareness />} />
           <Route path="/research-policy" element={<ResearchPolicy />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/news" element={<News />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
