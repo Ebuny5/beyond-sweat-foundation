@@ -848,6 +848,22 @@ const Index = () => {
                 <p className="founder-quote">
                   "My journey taught me that visibility is power. When we speak up, we make room for understanding, inclusion, and change."
                 </p>
+                <div className="mt-6">
+                  <a
+                    href="https://www.f6s.com/member/gifty-aruwajoye1?follow=1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Follow Gifty Aruwajoye on F6S"
+                  >
+                    <img
+                      src="https://www.f6s.com/images/f6s-follow-primary.png"
+                      width="78"
+                      height="22"
+                      alt="Follow Gifty Aruwajoye on F6S"
+                      style={{ width: '78px', height: '22px', padding: '0px', margin: '0px' }}
+                    />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
