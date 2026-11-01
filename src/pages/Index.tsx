@@ -409,27 +409,81 @@ const Index = () => {
         .contact-item h3 { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
         .contact-item a { font-size: 15px; color: var(--purple); text-decoration: none; }
 
-        /* FOOTER */
-        .footer { background: #0f1729; color: #fff; padding: 64px 24px 32px; }
-        .footer-grid {
-          max-width: 1200px; margin: 0 auto;
-          display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
-          margin-bottom: 48px;
+        /* FOOTER — glossy black, Giftovate-inspired layout */
+        .footer {
+          position: relative;
+          overflow: hidden;
+          color: #fff;
+          padding: 22px 28px 24px;
+          border-top: 1px solid rgba(255,255,255,0.18);
+          background:
+            radial-gradient(ellipse at 18% 0%, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.035) 28%, transparent 58%),
+            linear-gradient(112deg, #171717 0%, #080808 48%, #121212 100%);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
         }
-        .footer-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
-        .footer-brand img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
-        .footer-brand span { font-weight: 700; font-size: 16px; }
-        .footer-tagline { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.7; }
-        .footer h4 { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 20px; }
-        .footer ul { list-style: none; }
-        .footer ul li { margin-bottom: 12px; }
-        .footer ul li a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+        .footer-grid {
+          width: 100%;
+          max-width: 1320px;
+          margin: 0 auto 28px;
+          display: grid;
+          grid-template-columns: minmax(250px, 1.45fr) repeat(3, minmax(0, 1fr));
+          gap: clamp(28px, 4vw, 60px);
+          align-items: start;
+        }
+        .footer-identity { min-width: 0; }
+        .footer-brand {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin: 0 0 10px;
+        }
+        .footer-brand img {
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          object-fit: cover;
+          flex-shrink: 0;
+        }
+        .footer-brand span {
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 1.25;
+          color: #fff;
+        }
+        .footer-tagline {
+          max-width: 330px;
+          font-size: 14px;
+          color: #c77991;
+          line-height: 1.6;
+          margin: 0;
+        }
+        .footer h4 {
+          font-size: 13px;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: rgba(255,255,255,0.88);
+          margin: 8px 0 15px;
+        }
+        .footer ul { list-style: none; margin: 0; padding: 0; }
+        .footer ul li { margin: 0 0 10px; }
+        .footer ul li a {
+          color: rgba(255,255,255,0.76);
+          text-decoration: none;
+          font-size: 14px;
+          line-height: 1.5;
+          transition: color 0.2s;
+        }
         .footer ul li a:hover { color: #fff; }
         .footer-bottom {
-          max-width: 1200px; margin: 0 auto;
-          border-top: 1px solid rgba(255,255,255,0.08);
-          padding-top: 28px; text-align: center;
-          font-size: 13px; color: rgba(255,255,255,0.3);
+          width: 100%;
+          max-width: 1320px;
+          margin: 0 auto;
+          border-top: 1px solid rgba(255,255,255,0.12);
+          padding-top: 18px;
+          text-align: center;
+          font-size: 13px;
+          color: rgba(255,255,255,0.58);
         }
 
         /* RESPONSIVE */
@@ -462,14 +516,20 @@ const Index = () => {
           .founder-image img { min-height: 280px; }
           .founder-content { padding: 32px 24px; }
           .contact-row { grid-template-columns: 1fr; }
-          .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+          .footer { padding: 22px 24px 22px; }
+          .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 36px; }
         }
         @media (max-width: 560px) {
           .section { padding: 64px 20px; }
           .hero-btns { flex-direction: column; }
           .btn-primary, .btn-secondary { justify-content: center; }
           .stats-inner { grid-template-columns: 1fr 1fr; }
-          .footer-grid { grid-template-columns: 1fr; }
+          .footer { padding: 18px 20px 22px; }
+          .footer-grid { grid-template-columns: 1fr; gap: 22px; margin-bottom: 24px; }
+          .footer h4 { margin: 0 0 10px; }
+          .footer ul li { margin-bottom: 8px; }
+          .footer-tagline { max-width: 100%; }
+          .footer-bottom { padding-top: 15px; }
         }
       `}</style>
 
@@ -928,21 +988,12 @@ const Index = () => {
       {/* ── FOOTER ── */}
       <footer className="footer">
         <div className="footer-grid">
-          <div>
+          <div className="footer-identity">
             <div className="footer-brand">
               <img src={logo} alt="Beyond Sweat Foundation" />
               <span>Beyond Sweat Foundation</span>
             </div>
             <p className="footer-tagline">Climate-aware health advocacy for people with hyperhidrosis across Nigeria, Africa, and beyond.</p>
-          </div>
-          <div>
-            <h4>Organization</h4>
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/about">About Us</a></li>
-              <li><a href="#what-we-do">What We Do</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
           </div>
           <div>
             <h4>Resources</h4>
@@ -953,6 +1004,15 @@ const Index = () => {
               <li><a href="/faq">FAQs</a></li>
               <li><a href="https://ebuny.substack.com/p/when-data-is-invisible-people-are" target="_blank" rel="noopener noreferrer">When Data Is Invisible <ExternalLink size={11} style={{ display: "inline" }} /></a></li>
               <li><a href="https://medium.com/@giftyaruwajoye/breaking-the-silence-why-hyperhidrosis-education-belongs-in-nigerias-medical-curriculum-69585cf8d78a" target="_blank" rel="noopener noreferrer">Breaking the Silence <ExternalLink size={11} style={{ display: "inline" }} /></a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Organization</h4>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="#what-we-do">What We Do</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
           <div>
