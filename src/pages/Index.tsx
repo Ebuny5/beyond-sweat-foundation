@@ -156,14 +156,14 @@ const Index = () => {
         }
         .btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.7); }
         .hero-volunteer-btn {
-          background: #7044B8;
-          color: #111 !important;
-          border: 1.5px solid #7044B8;
+          background: #F4A623;
+          color: #4F2D9E !important;
+          border: 1.5px solid #F4A623;
         }
         .hero-volunteer-btn:hover {
-          background: #8056C8;
-          border-color: #8056C8;
-          color: #111 !important;
+          background: #F7B43F;
+          border-color: #F7B43F;
+          color: #4F2D9E !important;
         }
         .hero-ticker {
           font-size: 13px; color: rgba(255,255,255,0.5);
@@ -480,16 +480,17 @@ const Index = () => {
         .footer-tagline {
           max-width: 330px;
           font-size: 14px;
-          color: #c77991;
+          color: #ffffff;
           line-height: 1.6;
           margin: 0;
         }
-        .footer h4 {
+        .footer h4,
+        .footer-legal-title {
           font-size: 13px;
           font-weight: 700;
           letter-spacing: 0.08em;
           text-transform: uppercase;
-          color: rgba(255,255,255,0.88);
+          color: #ffffff;
           margin: 8px 0 15px;
         }
         .footer ul { list-style: none; margin: 0; padding: 0; }
@@ -1047,7 +1048,7 @@ const Index = () => {
             </ul>
           </div>
           <div>
-            <h4>Legal</h4>
+            <h4 className="footer-legal-title">Legal</h4>
             <ul>
               <li><a href="/privacy-policy">Privacy Policy</a></li>
               <li><a href="/terms">Terms of Service</a></li>
