@@ -30,7 +30,7 @@ const Index = () => {
 
       {/* Google Fonts */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@700;900&family=Cormorant+Garamond:ital,wght@1,700;1,900&display=swap');
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -103,12 +103,29 @@ const Index = () => {
           padding: 80px 48px 80px 60px; position: relative; z-index: 2;
         }
         .hero-badge {
-          display: inline-flex; align-items: center; gap: 6px;
-          background: rgba(244,166,35,0.15); border: 1px solid rgba(244,166,35,0.4);
-          color: var(--accent); border-radius: 20px;
-          padding: 6px 14px; font-size: 12px; font-weight: 600;
-          letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 24px;
+          position: absolute;
+          z-index: 5;
+          top: 88px;
+          left: 34px;
+          right: 34px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 16px;
+          padding: 0;
+          margin: 0;
+          color: var(--accent);
+          font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+          font-size: clamp(24px, 3vw, 36px);
+          font-style: italic;
+          font-weight: 700;
+          letter-spacing: 0.045em;
+          line-height: 1;
+          text-transform: uppercase;
+          text-shadow: 0 2px 12px rgba(0,0,0,0.35);
+          pointer-events: none;
         }
+        .hero-badge span { white-space: nowrap; }
         .hero h1 {
           font-family: 'Playfair Display', serif;
           font-size: clamp(36px, 5vw, 60px);
@@ -138,6 +155,16 @@ const Index = () => {
           transition: background 0.2s, border-color 0.2s;
         }
         .btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.7); }
+        .hero-volunteer-btn {
+          background: #7044B8;
+          color: #111 !important;
+          border: 1.5px solid #7044B8;
+        }
+        .hero-volunteer-btn:hover {
+          background: #8056C8;
+          border-color: #8056C8;
+          color: #111 !important;
+        }
         .hero-ticker {
           font-size: 13px; color: rgba(255,255,255,0.5);
           display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
@@ -491,7 +518,8 @@ const Index = () => {
           .nav-links { display: none; }
           .hamburger { display: block; }
           .hero { grid-template-columns: 1fr; min-height: auto; }
-          .hero-text { padding: 60px 24px 48px; }
+          .hero-badge { top: 82px; left: 24px; right: 24px; font-size: clamp(21px, 5.4vw, 28px); gap: 8px; }
+          .hero-text { padding: 142px 24px 48px; }
           .hero-image-col { height: 55vw; max-height: 360px; }
           .hero-image-col::after { background: linear-gradient(to bottom, var(--purple-dark) 0%, transparent 40%); }
           .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 32px; }
@@ -520,6 +548,8 @@ const Index = () => {
           .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 36px; }
         }
         @media (max-width: 560px) {
+          .hero-badge { top: 80px; left: 20px; right: 20px; font-size: clamp(20px, 5.8vw, 26px); letter-spacing: 0.025em; }
+          .hero-text { padding-top: 132px; }
           .section { padding: 64px 20px; }
           .hero-btns { flex-direction: column; }
           .btn-primary, .btn-secondary { justify-content: center; }
@@ -575,11 +605,12 @@ const Index = () => {
       {/* ── HERO ── */}
       <section id="home" aria-label="Homepage hero">
         <div className="hero">
+          <div className="hero-badge" aria-label="Climate, Health, Justice">
+            <span>Climate</span>
+            <span>Health</span>
+            <span>Justice</span>
+          </div>
           <div className="hero-text">
-            <div className="hero-badge">
-              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#F4A623" }} />
-              Climate · Health · Justice
-            </div>
             <h1>Confronting Hyperhidrosis in a Warming World</h1>
             <p className="hero-sub">
               Beyond Sweat Foundation combines lived experience, education, and climate-aware innovation to support people with hyperhidrosis across Nigeria, Africa, and the world.
@@ -588,7 +619,7 @@ const Index = () => {
               <a href="https://bit.ly/pan-africasurvey" target="_blank" rel="noopener noreferrer" className="btn-primary">
                 Take the Spotlight Survey
               </a>
-              <a href="#volunteer" className="btn-secondary">
+              <a href="#volunteer" className="btn-secondary hero-volunteer-btn">
                 Volunteer / Join
               </a>
             </div>
