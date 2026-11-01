@@ -30,7 +30,7 @@ const Index = () => {
 
       {/* Google Fonts */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@700;900&family=Cormorant+Garamond:ital,wght@1,700;1,900&display=swap');
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -103,12 +103,29 @@ const Index = () => {
           padding: 80px 48px 80px 60px; position: relative; z-index: 2;
         }
         .hero-badge {
-          display: inline-flex; align-items: center; gap: 6px;
-          background: rgba(244,166,35,0.15); border: 1px solid rgba(244,166,35,0.4);
-          color: var(--accent); border-radius: 20px;
-          padding: 6px 14px; font-size: 12px; font-weight: 600;
-          letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 24px;
+          position: absolute;
+          z-index: 5;
+          top: 88px;
+          left: 34px;
+          right: 34px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 16px;
+          padding: 0;
+          margin: 0;
+          color: var(--accent);
+          font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+          font-size: clamp(24px, 3vw, 36px);
+          font-style: italic;
+          font-weight: 700;
+          letter-spacing: 0.045em;
+          line-height: 1;
+          text-transform: uppercase;
+          text-shadow: 0 2px 12px rgba(0,0,0,0.35);
+          pointer-events: none;
         }
+        .hero-badge span { white-space: nowrap; }
         .hero h1 {
           font-family: 'Playfair Display', serif;
           font-size: clamp(36px, 5vw, 60px);
@@ -138,6 +155,16 @@ const Index = () => {
           transition: background 0.2s, border-color 0.2s;
         }
         .btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.7); }
+        .hero-volunteer-btn {
+          background: #7044B8;
+          color: #111 !important;
+          border: 1.5px solid #7044B8;
+        }
+        .hero-volunteer-btn:hover {
+          background: #8056C8;
+          border-color: #8056C8;
+          color: #111 !important;
+        }
         .hero-ticker {
           font-size: 13px; color: rgba(255,255,255,0.5);
           display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
@@ -409,27 +436,81 @@ const Index = () => {
         .contact-item h3 { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
         .contact-item a { font-size: 15px; color: var(--purple); text-decoration: none; }
 
-        /* FOOTER */
-        .footer { background: #0f1729; color: #fff; padding: 64px 24px 32px; }
-        .footer-grid {
-          max-width: 1200px; margin: 0 auto;
-          display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
-          margin-bottom: 48px;
+        /* FOOTER — glossy black, Giftovate-inspired layout */
+        .footer {
+          position: relative;
+          overflow: hidden;
+          color: #fff;
+          padding: 22px 28px 24px;
+          border-top: 1px solid rgba(255,255,255,0.18);
+          background:
+            radial-gradient(ellipse at 18% 0%, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.035) 28%, transparent 58%),
+            linear-gradient(112deg, #171717 0%, #080808 48%, #121212 100%);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
         }
-        .footer-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
-        .footer-brand img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
-        .footer-brand span { font-weight: 700; font-size: 16px; }
-        .footer-tagline { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.7; }
-        .footer h4 { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 20px; }
-        .footer ul { list-style: none; }
-        .footer ul li { margin-bottom: 12px; }
-        .footer ul li a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+        .footer-grid {
+          width: 100%;
+          max-width: 1320px;
+          margin: 0 auto 28px;
+          display: grid;
+          grid-template-columns: minmax(250px, 1.45fr) repeat(3, minmax(0, 1fr));
+          gap: clamp(28px, 4vw, 60px);
+          align-items: start;
+        }
+        .footer-identity { min-width: 0; }
+        .footer-brand {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin: 0 0 10px;
+        }
+        .footer-brand img {
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          object-fit: cover;
+          flex-shrink: 0;
+        }
+        .footer-brand span {
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 1.25;
+          color: #fff;
+        }
+        .footer-tagline {
+          max-width: 330px;
+          font-size: 14px;
+          color: #c77991;
+          line-height: 1.6;
+          margin: 0;
+        }
+        .footer h4 {
+          font-size: 13px;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: rgba(255,255,255,0.88);
+          margin: 8px 0 15px;
+        }
+        .footer ul { list-style: none; margin: 0; padding: 0; }
+        .footer ul li { margin: 0 0 10px; }
+        .footer ul li a {
+          color: rgba(255,255,255,0.76);
+          text-decoration: none;
+          font-size: 14px;
+          line-height: 1.5;
+          transition: color 0.2s;
+        }
         .footer ul li a:hover { color: #fff; }
         .footer-bottom {
-          max-width: 1200px; margin: 0 auto;
-          border-top: 1px solid rgba(255,255,255,0.08);
-          padding-top: 28px; text-align: center;
-          font-size: 13px; color: rgba(255,255,255,0.3);
+          width: 100%;
+          max-width: 1320px;
+          margin: 0 auto;
+          border-top: 1px solid rgba(255,255,255,0.12);
+          padding-top: 18px;
+          text-align: center;
+          font-size: 13px;
+          color: rgba(255,255,255,0.58);
         }
 
         /* RESPONSIVE */
@@ -437,7 +518,8 @@ const Index = () => {
           .nav-links { display: none; }
           .hamburger { display: block; }
           .hero { grid-template-columns: 1fr; min-height: auto; }
-          .hero-text { padding: 60px 24px 48px; }
+          .hero-badge { top: 82px; left: 24px; right: 24px; font-size: clamp(21px, 5.4vw, 28px); gap: 8px; }
+          .hero-text { padding: 142px 24px 48px; }
           .hero-image-col { height: 55vw; max-height: 360px; }
           .hero-image-col::after { background: linear-gradient(to bottom, var(--purple-dark) 0%, transparent 40%); }
           .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 32px; }
@@ -462,14 +544,22 @@ const Index = () => {
           .founder-image img { min-height: 280px; }
           .founder-content { padding: 32px 24px; }
           .contact-row { grid-template-columns: 1fr; }
-          .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+          .footer { padding: 22px 24px 22px; }
+          .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 36px; }
         }
         @media (max-width: 560px) {
+          .hero-badge { top: 80px; left: 20px; right: 20px; font-size: clamp(20px, 5.8vw, 26px); letter-spacing: 0.025em; }
+          .hero-text { padding-top: 132px; }
           .section { padding: 64px 20px; }
           .hero-btns { flex-direction: column; }
           .btn-primary, .btn-secondary { justify-content: center; }
           .stats-inner { grid-template-columns: 1fr 1fr; }
-          .footer-grid { grid-template-columns: 1fr; }
+          .footer { padding: 18px 20px 22px; }
+          .footer-grid { grid-template-columns: 1fr; gap: 22px; margin-bottom: 24px; }
+          .footer h4 { margin: 0 0 10px; }
+          .footer ul li { margin-bottom: 8px; }
+          .footer-tagline { max-width: 100%; }
+          .footer-bottom { padding-top: 15px; }
         }
       `}</style>
 
@@ -515,11 +605,12 @@ const Index = () => {
       {/* ── HERO ── */}
       <section id="home" aria-label="Homepage hero">
         <div className="hero">
+          <div className="hero-badge" aria-label="Climate, Health, Justice">
+            <span>Climate</span>
+            <span>Health</span>
+            <span>Justice</span>
+          </div>
           <div className="hero-text">
-            <div className="hero-badge">
-              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#F4A623" }} />
-              Climate · Health · Justice
-            </div>
             <h1>Confronting Hyperhidrosis in a Warming World</h1>
             <p className="hero-sub">
               Beyond Sweat Foundation combines lived experience, education, and climate-aware innovation to support people with hyperhidrosis across Nigeria, Africa, and the world.
@@ -528,7 +619,7 @@ const Index = () => {
               <a href="https://bit.ly/pan-africasurvey" target="_blank" rel="noopener noreferrer" className="btn-primary">
                 Take the Spotlight Survey
               </a>
-              <a href="#volunteer" className="btn-secondary">
+              <a href="#volunteer" className="btn-secondary hero-volunteer-btn">
                 Volunteer / Join
               </a>
             </div>
@@ -928,21 +1019,12 @@ const Index = () => {
       {/* ── FOOTER ── */}
       <footer className="footer">
         <div className="footer-grid">
-          <div>
+          <div className="footer-identity">
             <div className="footer-brand">
               <img src={logo} alt="Beyond Sweat Foundation" />
               <span>Beyond Sweat Foundation</span>
             </div>
             <p className="footer-tagline">Climate-aware health advocacy for people with hyperhidrosis across Nigeria, Africa, and beyond.</p>
-          </div>
-          <div>
-            <h4>Organization</h4>
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/about">About Us</a></li>
-              <li><a href="#what-we-do">What We Do</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
           </div>
           <div>
             <h4>Resources</h4>
@@ -953,6 +1035,15 @@ const Index = () => {
               <li><a href="/faq">FAQs</a></li>
               <li><a href="https://ebuny.substack.com/p/when-data-is-invisible-people-are" target="_blank" rel="noopener noreferrer">When Data Is Invisible <ExternalLink size={11} style={{ display: "inline" }} /></a></li>
               <li><a href="https://medium.com/@giftyaruwajoye/breaking-the-silence-why-hyperhidrosis-education-belongs-in-nigerias-medical-curriculum-69585cf8d78a" target="_blank" rel="noopener noreferrer">Breaking the Silence <ExternalLink size={11} style={{ display: "inline" }} /></a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Organization</h4>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="#what-we-do">What We Do</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
           <div>
